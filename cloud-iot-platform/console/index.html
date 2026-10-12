@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#9898f0">
+  <meta name="description" content="家庭水质健康物联网云平台 —— 设备接入 / 数据汇聚 / 健康分析 / 预警推送">
+  <title>家庭水质健康物联网云平台 V1.0</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 登录页 -->
+  <div id="login-view" class="login-view"></div>
+
+  <!-- 主界面：侧边栏 + 顶部栏 + 内容区 -->
+  <div id="app-view" class="app-view hidden">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <!-- 全局提示浮层 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "cloud-iot-platform",
+  "version": "1.0.0",
+  "description": "家庭水质健康物联网云平台软件 V1.0 —— 设备接入 / 数据汇聚 / 边缘计算 / 健康分析 / 预警推送",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "smoke": "node smoke_test.js"
+  },
+  "dependencies": {
+    "aedes": "^0.51.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mqtt": "^5.6.2",
+    "websocket-stream": "^5.5.2"
+  }
+}

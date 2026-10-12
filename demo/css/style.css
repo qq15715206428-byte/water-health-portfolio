@@ -1,0 +1,360 @@
+/**
+ * style.css —— 全局样式
+ * 移动端优先的"手机壳"布局：居中窄容器 + 底部标签栏，模拟移动应用观感。
+ * 采用语义化 CSS 变量统一配色，红黄绿三档与预警等级保持一致。
+ */
+
+:root {
+  --primary: #9898f0;        /* 主色（淡紫） */
+  --primary-dark: #6050a8;   /* 深紫（强调 / 按钮） */
+  --pink: #f898b0;           /* 品牌粉 */
+  --grad: linear-gradient(135deg, #f898b0, #9898f0); /* 粉紫渐变 */
+  --bg: #f6f6fb;             /* 页面背景（浅灰紫白） */
+  --card: #ffffff;           /* 卡片背景 */
+  --text: #100838;           /* 主文字（深紫近黑） */
+  --text-muted: #9a9db8;     /* 次要文字 */
+  --border: #eceaf5;         /* 分隔线 */
+  --green: #2e7d32;          /* 正常（绿） */
+  --orange: #fb8c00;         /* 预警（黄/橙） */
+  --red: #e53935;            /* 超标（红） */
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(96, 80, 168, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* —— 移动端窄容器（手机壳） —— */
+.login-view, .app-view {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+.app-view {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+@media (min-width: 520px) {
+  .app-view, .login-view {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.hidden { display: none !important; }
+
+/* —— 顶部标题栏 —— */
+.app-header {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 14px;
+  background: var(--grad);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex: none;
+}
+.app-header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.back-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  width: 32px;
+}
+.app-header-user {
+  font-size: 12px;
+  opacity: 0.9;
+  white-space: nowrap;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* —— 内容区 —— */
+.app-main {
+  flex: 1;
+  padding: 16px 14px 80px;
+  overflow-y: auto;
+}
+
+/* —— 底部标签栏 —— */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 60px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  display: flex;
+  z-index: 20;
+}
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 11px;
+  user-select: none;
+}
+.tab-item .tab-icon { font-size: 22px; line-height: 1; }
+.tab-item.active { color: var(--primary); font-weight: 600; }
+
+/* —— 卡片 —— */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-title .more {
+  font-size: 13px;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* —— 综合评分仪表盘 —— */
+.score-panel {
+  background: var(--grad);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  margin-bottom: 14px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.score-panel .score-level {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.score-panel .score-hint { font-size: 13px; opacity: 0.92; margin-top: 8px; }
+
+/* —— 指标卡片 —— */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.metric-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  border-left: 4px solid var(--green);
+  cursor: pointer;
+}
+.metric-card .metric-name { font-size: 13px; color: var(--text-muted); }
+.metric-card .metric-value { font-size: 24px; font-weight: 700; margin: 4px 0 2px; }
+.metric-card .metric-value .unit { font-size: 12px; font-weight: 400; color: var(--text-muted); margin-left: 3px; }
+.metric-card .metric-status { font-size: 12px; }
+.metric-card.st-warn { border-left-color: var(--orange); }
+.metric-card.st-danger { border-left-color: var(--red); }
+
+/* 状态配色文本 */
+.t-green { color: var(--green); }
+.t-orange { color: var(--orange); }
+.t-red { color: var(--red); }
+
+/* —— 列表 —— */
+.list { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.list-item:last-child { border-bottom: none; }
+.list-item .li-icon { font-size: 26px; margin-right: 12px; flex: none; }
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  flex: none;
+}
+.list-item .li-body { flex: 1; min-width: 0; }
+.list-item .li-title { font-size: 15px; font-weight: 500; }
+.list-item .li-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.list-item .li-right { text-align: right; flex: none; }
+.list-item .li-right .li-main { font-size: 14px; font-weight: 600; }
+
+/* 徽标 / 标签 */
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.badge.green { background: #e8f5e9; color: var(--green); }
+.badge.orange { background: #fff3e0; color: var(--orange); }
+.badge.red { background: #ffebee; color: var(--red); }
+.badge.gray { background: #eceff1; color: var(--text-muted); }
+
+/* —— 表单 —— */
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+.form-input, .form-select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+.form-input:focus, .form-select:focus { border-color: var(--primary); }
+
+/* 单选 / 多选胶囊 */
+.chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  background: #fff;
+  color: var(--text-muted);
+}
+.chip.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* —— 按钮 —— */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+}
+.btn:active { opacity: 0.85; }
+.btn.ghost { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+.btn.danger { background: var(--red); }
+.btn.sm { display: inline-block; width: auto; padding: 7px 16px; font-size: 13px; }
+
+/* 开关 */
+.switch { position: relative; width: 44px; height: 24px; flex: none; cursor: pointer; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch .slider {
+  position: absolute; inset: 0;
+  background: #ccc; border-radius: 24px; transition: 0.25s;
+}
+.switch .slider::before {
+  content: ''; position: absolute; left: 3px; top: 3px;
+  width: 18px; height: 18px; background: #fff; border-radius: 50%; transition: 0.25s;
+}
+.switch input:checked + .slider { background: var(--primary); }
+.switch input:checked + .slider::before { transform: translateX(20px); }
+
+/* —— 分段选择 —— */
+.seg { display: flex; background: #eceaf5; border-radius: 10px; padding: 3px; margin-bottom: 12px; }
+.seg-item {
+  flex: 1; text-align: center; padding: 7px 0; font-size: 13px;
+  border-radius: 8px; cursor: pointer; color: var(--text-muted); user-select: none;
+}
+.seg-item.active { background: #fff; color: var(--primary); font-weight: 600; box-shadow: var(--shadow); }
+
+/* —— 登录页 —— */
+.login-view { padding: 40px 24px; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(180deg, #f898b0 0%, #c7c2f5 45%, #f6f6fb 100%); }
+.login-brand { text-align: center; margin-bottom: 30px; }
+.login-brand .logo { font-size: 56px; }
+.login-brand h1 { font-size: 22px; color: #fff; margin-top: 6px; text-shadow: 0 1px 6px rgba(96, 80, 168, 0.55); }
+.login-brand p { color: rgba(255,255,255,0.92); font-size: 13px; margin-top: 4px; }
+.login-box { background: #fff; border-radius: 16px; padding: 24px 20px; box-shadow: var(--shadow); }
+.login-tabs { display: flex; margin-bottom: 18px; }
+.login-tabs .lt { flex: 1; text-align: center; padding: 8px; font-size: 15px; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; }
+.login-tabs .lt.active { color: var(--primary); font-weight: 600; border-bottom-color: var(--primary); }
+.login-tip { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 14px; }
+
+/* —— 图表容器 —— */
+.chart-box { width: 100%; overflow-x: auto; }
+
+/* —— 提示浮层 —— */
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.78);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 999;
+  max-width: 80%;
+  text-align: center;
+}
+
+/* —— 空状态 —— */
+.empty { text-align: center; color: var(--text-muted); padding: 30px 0; font-size: 14px; }
+.empty .empty-icon { font-size: 40px; display: block; margin-bottom: 8px; }
+
+/* —— 报告文本块 —— */
+.report-text {
+  background: #fafbfc;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  color: #37474f;
+}
+
+/* —— 预警项 —— */
+.alert-item { padding: 14px 16px; border-bottom: 1px solid var(--border); }
+.alert-item:last-child { border-bottom: none; }
+.alert-item .al-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.alert-item .al-name { font-weight: 600; font-size: 15px; }
+.alert-item .al-advice { font-size: 13px; color: var(--text-muted); }
+.alert-item .al-time { font-size: 11px; color: var(--text-muted); margin-top: 4px; }

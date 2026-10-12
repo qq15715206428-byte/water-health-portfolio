@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#9898f0">
+  <meta name="description" content="家庭水质健康智能管理移动应用软件 —— 打通水质监测最后一米">
+  <title>水质健康管家 V1.0</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- 登录 / 注册页 -->
+  <div id="login-view" class="login-view"></div>
+
+  <!-- 主界面：顶部标题栏 + 内容区 + 底部标签栏 -->
+  <div id="app-view" class="app-view hidden">
+    <header class="app-header">
+      <button id="back-btn" class="back-btn hidden" aria-label="返回">‹</button>
+      <div class="app-header-title" id="app-title">水质仪表盘</div>
+      <div class="app-header-user" id="app-user"></div>
+    </header>
+    <main class="app-main" id="app-main"></main>
+    <nav class="tab-bar" id="tab-bar" aria-label="主导航"></nav>
+  </div>
+
+  <!-- 全局提示浮层 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

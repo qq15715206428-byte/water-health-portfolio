@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="产品需求文档 PRD —— 家庭水质健康智能管理系统">
+  <title>PRD · 水质健康作品集</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="doc-hero editable">
+    <div class="doc-hero-inner">
+      <p class="eyebrow"><span class="zh">交付物 ② · 产品需求文档</span><span class="en">Deliverable ② · PRD</span></p>
+      <h1><span class="zh">产品需求文档（PRD）</span><span class="en">Product Requirements Document</span></h1>
+      <p class="sub">
+        <span class="zh">基于两套软著的实际实现整理，而非照搬申报书初稿。定义「监测—分析—预警—处理」闭环的功能边界与业务规则。</span>
+        <span class="en">Written from the two shipped software copyrights — not the original proposal. Defines the feature scope and business rules of the monitor–analyze–alert–resolve loop.</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="doc-body">
+    <div class="content-inner editable">
+
+      <section class="block">
+        <h2><span class="zh">文档概览</span><span class="en">Overview</span></h2>
+        <table>
+          <tbody>
+            <tr><th style="width:32%"><span class="zh">版本</span><span class="en">Version</span></th><td>V1.0</td></tr>
+            <tr><th><span class="zh">产品名称</span><span class="en">Product</span></th><td><span class="zh">移动应用 + 物联网云平台</span><span class="en">Mobile App + IoT Cloud Platform</span></td></tr>
+            <tr><th><span class="zh">定位</span><span class="en">Positioning</span></th><td><span class="zh">面向家庭的便携式水质监测与个性化健康管理</span><span class="en">Portable home water monitoring + personalized health management</span></td></tr>
+            <tr><th><span class="zh">目标用户</span><span class="en">Users</span></th><td><span class="zh">自住房家庭 / 租房宿舍 / 母婴家庭 / 差旅人群</span><span class="en">Homeowners / renters / infant families / travelers</span></td></tr>
+            <tr><th><span class="zh">状态</span><span class="en">Status</span></th><td><span class="zh">待评审</span><span class="en">Pending review</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">产品目标</span><span class="en">Product goals</span></h2>
+        <div class="grid cols-3">
+          <div class="card"><h4><span class="zh">看得见</span><span class="en">See</span></h4><p><span class="zh">随时查看多指标、实时、历史水质数据。</span><span class="en">Real-time &amp; historical multi-metric data on demand.</span></p></div>
+          <div class="card"><h4><span class="zh">看得懂</span><span class="en">Understand</span></h4><p><span class="zh">把指标翻译成对皮肤/头发/身体的健康影响。</span><span class="en">Translate metrics into skin/hair/body health impact.</span></p></div>
+          <div class="card"><h4><span class="zh">做得了</span><span class="en">Act</span></h4><p><span class="zh">个性化方案 + 联动净水/软水设备自动处理。</span><span class="en">Personalized plan + auto-linked water treatment.</span></p></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">功能清单 · 移动应用（软著 1，11 模块）</span><span class="en">Features · App (SC #1, 11 modules)</span></h2>
+        <table>
+          <thead><tr><th style="width:14%"><span class="zh">#</span><span class="en">#</span></th><th style="width:22%"><span class="zh">模块</span><span class="en">Module</span></th><th><span class="zh">说明</span><span class="en">Description</span></th><th style="width:12%"><span class="zh">优先级</span><span class="en">Priority</span></th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><span class="zh">登录/注册</span><span class="en">Auth</span></td><td><span class="zh">本地账号，数据存于本机浏览器</span><span class="en">Local account, stored in-browser</span></td><td>P0</td></tr>
+            <tr><td>2</td><td><span class="zh">水质仪表盘</span><span class="en">Dashboard</span></td><td><span class="zh">综合评分（红黄绿）+ 六项指标卡片</span><span class="en">Composite score + 6 metric cards</span></td><td>P0</td></tr>
+            <tr><td>3</td><td><span class="zh">实时监测</span><span class="en">Realtime</span></td><td><span class="zh">定时刷新，达标状态一目了然</span><span class="en">Periodic refresh, clear pass/fail</span></td><td>P0</td></tr>
+            <tr><td>4</td><td><span class="zh">历史趋势</span><span class="en">Trends</span></td><td><span class="zh">日/周/月折线图，可切换指标</span><span class="en">Day/week/month line charts</span></td><td>P0</td></tr>
+            <tr><td>5</td><td><span class="zh">健康画像</span><span class="en">Profile</span></td><td><span class="zh">皮肤/头皮/敏感点/家庭成员录入</span><span class="en">Skin/scalp/sensitivity/family</span></td><td>P0</td></tr>
+            <tr><td>6</td><td><span class="zh">健康方案</span><span class="en">Advice</span></td><td><span class="zh">指标超标 + 画像 → 个性化建议</span><span class="en">Over-limit + profile → advice</span></td><td>P0</td></tr>
+            <tr><td>7</td><td><span class="zh">异常预警</span><span class="en">Alerts</span></td><td><span class="zh">分级预警（高风险/提示）+ 记录</span><span class="en">Tiered alerts + history</span></td><td>P0</td></tr>
+            <tr><td>8</td><td><span class="zh">设备管理</span><span class="en">Devices</span></td><td><span class="zh">监测设备绑定/解绑/在线状态</span><span class="en">Bind/unbind, online status</span></td><td>P1</td></tr>
+            <tr><td>9</td><td><span class="zh">设备联动</span><span class="en">Linkage</span></td><td><span class="zh">净水/软水/龙头手动与自动联动</span><span class="en">Manual &amp; auto control</span></td><td>P1</td></tr>
+            <tr><td>10</td><td><span class="zh">健康报告</span><span class="en">Report</span></td><td><span class="zh">周报/月报生成，复制/打印导出</span><span class="en">Weekly/monthly, export</span></td><td>P1</td></tr>
+            <tr><td>11</td><td><span class="zh">系统设置</span><span class="en">Settings</span></td><td><span class="zh">通知/数据清除/隐私/退出</span><span class="en">Notifs, clear data, privacy, logout</span></td><td>P1</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">物联网云平台（软著 2）</span><span class="en">IoT Cloud Platform (SC #2)</span></h2>
+        <table>
+          <thead><tr><th style="width:24%"><span class="zh">能力</span><span class="en">Capability</span></th><th><span class="zh">说明</span><span class="en">Description</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">设备接入</span><span class="en">Ingest</span></td><td><span class="zh">MQTT 3.1.1 Broker（TCP 1883 + WebSocket），主题 <code>home/water/&lt;metricKey&gt;</code></span><span class="en">MQTT 3.1.1 broker, topic <code>home/water/&lt;metricKey&gt;</code></span></td></tr>
+            <tr><td><span class="zh">REST API</span><span class="en">REST API</span></td><td><code>GET /api/water/current</code> · <code>/history</code> · <code>/devices</code> · <code>/linkage</code> · <code>POST /linkage/:id/control</code></td></tr>
+            <tr><td><span class="zh">数据存储</span><span class="en">Storage</span></td><td><span class="zh">JSON 文件持久化 + 内存缓存</span><span class="en">JSON file + memory cache</span></td></tr>
+            <tr><td><span class="zh">边缘计算</span><span class="en">Edge logic</span></td><td><span class="zh">三档阈值判定（safe/warn/danger），接入即时本地判定</span><span class="en">3-tier threshold at ingest</span></td></tr>
+            <tr><td><span class="zh">健康分析</span><span class="en">Health engine</span></td><td><span class="zh">指标 + 画像 → 个性化建议（规则引擎）</span><span class="en">Rule-based personalized advice</span></td></tr>
+            <tr><td><span class="zh">数据安全</span><span class="en">Security</span></td><td><span class="zh">口令哈希 + AES 数据加密</span><span class="en">Password hash + AES encryption</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">信息架构</span><span class="en">Information architecture</span></h2>
+<pre>登录/注册
+  └─ 主界面（底部标签导航）
+      ├─ 首页（水质仪表盘：综合评分 + 六项指标卡片）
+      ├─ 实时监测
+      ├─ 历史趋势（日/周/月切换）
+      ├─ 健康画像（皮肤/头皮/敏感点/家庭成员）
+      ├─ 健康方案（饮水/护肤/护发建议）
+      ├─ 异常预警（分级 + 记录）
+      ├─ 设备（设备管理 + 设备联动）
+      ├─ 健康报告（周报/月报）
+      └─ 我的（系统设置）</pre>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">核心业务规则</span><span class="en">Core business rules</span></h2>
+        <h3><span class="zh">三档阈值判定</span><span class="en">Three-tier threshold</span></h3>
+        <p><span class="zh">每项指标定义 <code>safe</code>（绿）/ <code>warn</code>（黄）/ <code>danger</code>（红）三档，驱动仪表盘评分颜色、预警分级、联动触发。⚠️ 改阈值需同步更新前端与后端的 <code>METRICS</code>。</span><span class="en">Each metric has <code>safe</code>/<code>warn</code>/<code>danger</code> tiers driving score color, alert level, and linkage. ⚠️ Changing a threshold updates both frontend &amp; backend <code>METRICS</code>.</span></p>
+        <h3><span class="zh">健康画像 → 个性化方案</span><span class="en">Profile → personalized plan</span></h3>
+        <p><span class="zh">示例规则：<code>余氯超标 + 敏感肌 → 「洗漱前放水 30s + 使用除氯花洒」</code>。</span><span class="en">Example rule: <code>high chlorine + sensitive skin → “flush 30s + chlorine-filtering shower head”</code>.</span></p>
+        <h3><span class="zh">分级预警</span><span class="en">Tiered alerts</span></h3>
+        <p><span class="zh">区分「饮用水高风险」（立即停用提醒）与「生活用水提示」（建议性）。</span><span class="en">Distinguish “drinking high-risk” (stop now) from “household advisory”.</span></p>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">非功能需求</span><span class="en">Non-functional requirements</span></h2>
+        <table>
+          <thead><tr><th style="width:20%"><span class="zh">类别</span><span class="en">Category</span></th><th><span class="zh">要求</span><span class="en">Requirement</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">性能</span><span class="en">Performance</span></td><td><span class="zh">实时刷新延迟 &lt; 3s</span><span class="en">Realtime refresh &lt; 3s</span></td></tr>
+            <tr><td><span class="zh">兼容性</span><span class="en">Compat</span></td><td><span class="zh">移动端优先，主流浏览器，零构建零依赖</span><span class="en">Mobile-first, no build, zero deps</span></td></tr>
+            <tr><td><span class="zh">安全</span><span class="en">Security</span></td><td><span class="zh">口令哈希、AES 加密、本地优先存储</span><span class="en">Hash, AES, local-first</span></td></tr>
+            <tr><td><span class="zh">可扩展</span><span class="en">Extensible</span></td><td><span class="zh">数据源抽象（Mock/HTTP/MQTT 可切换）</span><span class="en">Swappable data sources</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">已知限制与后续规划</span><span class="en">Limitations &amp; roadmap</span></h2>
+        <ul>
+          <li><span class="zh">当前为 Mock 数据演示，需接入真实水质数据源</span><span class="en">Mock data today; real source needed</span></li>
+          <li><span class="zh">健康分析为规则引擎，后续升级 LLM + 文献知识库（RAG）</span><span class="en">Rule engine → LLM + RAG later</span></li>
+          <li><span class="zh">硬件终端处于设计与选型阶段，尚未量产</span><span class="en">Hardware in design/selection, not yet produced</span></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div class="foot-note"><span class="zh">交付物 ② · PRD。正文可「开启编辑」直接修改。</span><span class="en">Deliverable ② · PRD. Edit inline via “Edit”.</span></div>
+      <div><a href="../index.html"><span class="zh">← 返回案例</span><span class="en">← Back to case</span></a></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Python 数据分析（EDA）—— 水质监测数据探索">
+  <title>数据分析（EDA） · 水质健康作品集</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="doc-hero editable">
+    <div class="doc-hero-inner">
+      <p class="eyebrow"><span class="zh">交付物 ⑨ · Python 数据分析</span><span class="en">Deliverable ⑨ · Python EDA</span></p>
+      <h1><span class="zh">数据分析（EDA）</span><span class="en">Exploratory Data Analysis</span></h1>
+      <p class="sub">
+        <span class="zh">用 pandas + matplotlib 对水质时序数据做探索性分析，并与产品逻辑（三档阈值引擎）打通。</span>
+        <span class="en">Exploratory analysis of water-quality time-series with pandas + matplotlib, tied to the 3-tier threshold engine.</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="doc-body">
+    <div class="content-inner editable">
+
+      <section class="block">
+        <blockquote>
+          <span class="zh">诚实边界：真实硬件尚未接入，本脚本输入为模拟水质数据（随机游走 + 偶发异常，与软著 <code>mockSource.js</code> 同源逻辑，参数对齐 <code>config.js</code>）。接入真实公开数据集后，替换数据源即可复用整套分析。</span>
+          <span class="en">Honest boundary: hardware isn't connected yet; input is simulated data (random walk + injected anomalies, same logic as <code>mockSource.js</code>, parameters aligned to <code>config.js</code>). Swap in a real dataset and the whole analysis is reusable.</span>
+        </blockquote>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">分析内容</span><span class="en">Analyses</span></h2>
+        <table>
+          <thead><tr><th style="width:40%"><span class="zh">分析</span><span class="en">Analysis</span></th><th><span class="zh">回答的产品问题</span><span class="en">Product question</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">六指标时间趋势</span><span class="en">Time trends</span></td><td><span class="zh">水质如何波动？哪些指标长期超标？</span><span class="en">How does it vary? Which stay over-limit?</span></td></tr>
+            <tr><td><span class="zh">各指标分布</span><span class="en">Distributions</span></td><td><span class="zh">读数集中区间？偏离国标多远？</span><span class="en">Where do readings cluster?</span></td></tr>
+            <tr><td><span class="zh">指标相关性</span><span class="en">Correlation</span></td><td><span class="zh">哪些指标同涨同跌（如余氯↔浊度）？</span><span class="en">Which move together (chlorine↔turbidity)?</span></td></tr>
+            <tr><td><span class="zh">三档阈值占比</span><span class="en">Tier ratio</span></td><td><span class="zh">红/黄/绿各占多少？预警压力多大？</span><span class="en">How much alert pressure?</span></td></tr>
+            <tr><td><span class="zh">异常（超标）频次</span><span class="en">Alert frequency</span></td><td><span class="zh">哪类预警最频繁？对应哪类设备？</span><span class="en">Which alerts dominate?</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">图表产物</span><span class="en">Charts</span></h2>
+        <div class="grid cols-1" style="gap:24px">
+          <figure style="margin:0">
+            <img src="../docs/09-data-analysis/charts/01_trend.png" alt="六指标时间趋势" style="width:100%; height:auto; border:1px solid var(--line); border-radius:var(--radius); background:#fff">
+            <figcaption style="color:var(--muted); font-size:13px; margin-top:8px"><span class="zh">图 1 · 六指标时间趋势</span><span class="en">Fig 1 · time trends of six metrics</span></figcaption>
+          </figure>
+          <figure style="margin:0">
+            <img src="../docs/09-data-analysis/charts/02_distribution.png" alt="各指标分布" style="width:100%; height:auto; border:1px solid var(--line); border-radius:var(--radius); background:#fff">
+            <figcaption style="color:var(--muted); font-size:13px; margin-top:8px"><span class="zh">图 2 · 各指标分布</span><span class="en">Fig 2 · metric distributions</span></figcaption>
+          </figure>
+          <figure style="margin:0">
+            <img src="../docs/09-data-analysis/charts/03_correlation.png" alt="指标相关性" style="width:100%; height:auto; border:1px solid var(--line); border-radius:var(--radius); background:#fff">
+            <figcaption style="color:var(--muted); font-size:13px; margin-top:8px"><span class="zh">图 3 · 指标相关性</span><span class="en">Fig 3 · metric correlation</span></figcaption>
+          </figure>
+          <figure style="margin:0">
+            <img src="../docs/09-data-analysis/charts/04_threshold_ratio.png" alt="三档阈值判定占比" style="width:100%; height:auto; border:1px solid var(--line); border-radius:var(--radius); background:#fff">
+            <figcaption style="color:var(--muted); font-size:13px; margin-top:8px"><span class="zh">图 4 · 三档阈值判定占比</span><span class="en">Fig 4 · 3-tier threshold ratio</span></figcaption>
+          </figure>
+          <figure style="margin:0">
+            <img src="../docs/09-data-analysis/charts/05_alert_frequency.png" alt="异常频次" style="width:100%; height:auto; border:1px solid var(--line); border-radius:var(--radius); background:#fff">
+            <figcaption style="color:var(--muted); font-size:13px; margin-top:8px"><span class="zh">图 5 · 异常（超标）频次</span><span class="en">Fig 5 · alert frequency</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">运行方式</span><span class="en">How to run</span></h2>
+<pre>cd 09-data-analysis
+python eda_water_quality.py</pre>
+        <p><span class="zh">依赖 <code>pandas</code>、<code>matplotlib</code>、<code>numpy</code>。输出 <code>charts/*.png</code> + <code>water_quality_sim.csv</code> + 控制台统计摘要。</span><span class="en">Requires <code>pandas</code>, <code>matplotlib</code>, <code>numpy</code>. Outputs charts + CSV + console summary.</span></p>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">阈值判定逻辑（与软著一致）</span><span class="en">Threshold logic (matches the SC)</span></h2>
+        <p><span class="zh">三档判定与 <code>alertEngine.js</code> 同源：<code>safe</code>（绿）<code>safeMin ≤ value ≤ safeMax</code>；<code>warn</code>（黄）超出 safe 未超 warn；<code>danger</code>（红）超出 <code>warnMin/warnMax</code>。指标阈值取自 <code>config.js</code>：余氯 0–0.2 / 硬度 0–300 / pH 6.5–8.5 / 浊度 0–1 / 温度 10–30 / 重金属 0–10。</span><span class="en">Same 3-tier logic as <code>alertEngine.js</code>; thresholds from <code>config.js</code>: chlorine 0–0.2 / hardness 0–300 / pH 6.5–8.5 / turbidity 0–1 / temp 10–30 / heavy metal 0–10.</span></p>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div class="foot-note"><span class="zh">交付物 ⑨ · 数据分析。模拟数据，待接真实数据集。</span><span class="en">Deliverable ⑨ · EDA. Simulated data; real dataset pending.</span></div>
+      <div><a href="../index.html"><span class="zh">← 返回案例</span><span class="en">← Back to case</span></a></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

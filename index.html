@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="家庭水质健康智能管理系统 —— 产品经理作品集 Case Study">
+  <title>水质健康 · Case Study · 产品经理作品集</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== Hero ===================== -->
+  <header class="hero editable">
+    <div class="hero-inner">
+      <p class="eyebrow"><span class="zh">大学生创新创业训练计划 · 产品复盘</span><span class="en">College Innovation Project · Case Study</span></p>
+      <h1>
+        <span class="zh">打通水质监测的「最后一米」</span>
+        <span class="en">Closing the “Last Meter” of Water Quality</span>
+      </h1>
+      <p class="sub">
+        <span class="zh">把水质监测从实验室和工业场景，下沉到普通家庭的每一次喝水、洗漱、洗澡——让用户<span style="color:#fff">看得见水质、读得懂风险、做得了处理</span>，形成「监测—分析—预警—处理」的闭环。</span>
+        <span class="en">Bring water-quality monitoring out of the lab and into everyday taps — making water quality <span style="color:#fff">visible, understandable, and actionable</span>, closing the “monitor—analyze—alert—resolve” loop.</span>
+      </p>
+      <div class="meta">
+        <span class="chip"><span class="zh">负责人 · 产品角色</span><span class="en">Lead · Product</span></span>
+        <span class="chip"><span class="zh">双软著已交付</span><span class="en">2 software copyrights shipped</span></span>
+        <span class="chip"><span class="zh">前端 + 物联网云平台</span><span class="en">Web App + IoT Cloud</span></span>
+      </div>
+      <div class="cta">
+        <a class="btn-solid" href="#demo"><span class="zh">↓ 在线体验 Demo</span><span class="en">↓ Try the live demo</span></a>
+        <a class="btn-ghost" href="docs/01-case-study.md" target="_blank"><span class="zh">阅读完整复盘（Markdown）</span><span class="en">Full write-up (Markdown)</span></a>
+      </div>
+      <div class="tier-strip" aria-hidden="true"><i class="s"></i><i class="w"></i><i class="d"></i></div>
+    </div>
+  </header>
+
+  <!-- ===================== 章节导航 ===================== -->
+  <nav class="section-nav" aria-label="章节导航">
+    <a href="#context"><span class="zh">背景</span><span class="en">Context</span></a>
+    <a href="#problem"><span class="zh">问题</span><span class="en">Problem</span></a>
+    <a href="#users"><span class="zh">用户</span><span class="en">Users</span></a>
+    <a href="#solution"><span class="zh">方案</span><span class="en">Solution</span></a>
+    <a href="#demo"><span class="zh">Demo</span><span class="en">Demo</span></a>
+    <a href="#metrics"><span class="zh">指标</span><span class="en">Metrics</span></a>
+    <a href="#verification"><span class="zh">验证</span><span class="en">Validation</span></a>
+    <a href="#reflection"><span class="zh">复盘</span><span class="en">Reflection</span></a>
+  </nav>
+
+  <!-- ===================== 正文 ===================== -->
+  <div class="content">
+    <div class="content-inner editable">
+
+      <!-- 背景 -->
+      <section class="block" id="context">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">背景 · 为什么是这个题</span><span class="en">Context · Why this problem</span></p>
+          <h2><span class="zh">市场在增长，但「最后一米」长期被忽视</span><span class="en">A growing market, a neglected “last meter”</span></h2>
+          <p class="lede">
+            <span class="zh">家庭用水的水质问题（余氯、硬度、重金属、浊度…）长期「看不见、看不懂、不会处理」。市场不缺检测硬件，缺的是把水质数据翻译成健康行动的那一层。</span>
+            <span class="en">Household water issues — residual chlorine, hardness, heavy metals, turbidity — have long been invisible, opaque, and hard to act on. The market has no shortage of sensors; what it lacks is the layer that turns readings into health actions.</span>
+          </p>
+        </div>
+
+        <div class="grid cols-4">
+          <div class="stat">
+            <div class="num"><span class="zh">240<em>亿</em></span><span class="en">¥24<em>b</em></span></div>
+            <div class="label"><span class="zh">净水器零售额</span><span class="en">Purifier retail sales</span></div>
+            <div class="src"><span class="zh">奥维云网 AVC · 2024</span><span class="en">AVC · 2024</span></div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="zh">+17.2<em>%</em></span><span class="en">+17.2<em>%</em></span></div>
+            <div class="label"><span class="zh">同比增速</span><span class="en">YoY growth</span></div>
+            <div class="src"><span class="zh">奥维云网 AVC · 2024</span><span class="en">AVC · 2024</span></div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="zh">23<em>%</em></span><span class="en">23<em>%</em></span></div>
+            <div class="label"><span class="zh">家庭渗透率</span><span class="en">Household penetration</span></div>
+            <div class="src"><span class="zh">对比美国 80%、日韩 90%+</span><span class="en">vs. US 80%, JP/KR 90%+</span></div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="zh">877<em>万台</em></span><span class="en">8.77<em>m</em></span></div>
+            <div class="label"><span class="zh">年销量</span><span class="en">Units sold</span></div>
+            <div class="src"><span class="zh">奥维云网 AVC · 2024</span><span class="en">AVC · 2024</span></div>
+          </div>
+        </div>
+
+        <blockquote style="margin-top:20px">
+          <span class="zh">用户装了净水器之后，并不知道水质到底好不好——滤芯什么时候换、出水是否真的达标，全靠「感觉」。这就是「最后一米」。</span>
+          <span class="en">After installing a purifier, people still don't know if their water is actually good — when to change the filter, whether the output is safe. It all comes down to “feeling”. That's the last meter.</span>
+        </blockquote>
+      </section>
+
+      <!-- 问题 -->
+      <section class="block" id="problem">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">问题 · 三个痛点</span><span class="en">Problem · Three pain points</span></p>
+          <h2><span class="zh">先看得见，再看得懂，最后要能处理</span><span class="en">See it, understand it, act on it</span></h2>
+        </div>
+
+        <div class="pain-chain">
+          <div class="pain-step">
+            <span class="mark one">1</span>
+            <div><b><span class="zh">看不见</span><span class="en">Can't see</span></b><br><span class="zh">「水有没有余氯、干不干净，我完全不知道。」</span><span class="en">“Is there chlorine? Is it clean? I have no idea.”</span></div>
+            <div class="why"><span class="zh">水质状态不可感知</span><span class="en">No visibility into water state</span></div>
+          </div>
+          <div class="pain-step">
+            <span class="mark two">2</span>
+            <div><b><span class="zh">看不懂</span><span class="en">Can't understand</span></b><br><span class="zh">「TDS 是 50 还是 500，对我皮肤有什么影响？」</span><span class="en">“TDS 50 or 500 — what does it mean for my skin?”</span></div>
+            <div class="why"><span class="zh">数据 → 健康意义缺翻译</span><span class="en">No translation from data to health meaning</span></div>
+          </div>
+          <div class="pain-step">
+            <span class="mark three">3</span>
+            <div><b><span class="zh">不会处理</span><span class="en">Can't act</span></b><br><span class="zh">「知道水硬，但我该换净水器还是装软水机？」</span><span class="en">“Water's hard — do I change the purifier or add a softener?”</span></div>
+            <div class="why"><span class="zh">从发现问题到可落地方案有断点</span><span class="en">Gap from problem to actionable solution</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 用户 -->
+      <section class="block" id="users">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">用户 · 为谁做</span><span class="en">Users · Who it's for</span></p>
+          <h2><span class="zh">四类场景，一个共同诉求</span><span class="en">Four personas, one shared need</span></h2>
+          <p class="lede"><span class="zh">需求假设，需一手问卷验证（占位数据，详见「调研」页）。</span><span class="en">Assumptions to be validated by primary research (see Research page).</span></p>
+        </div>
+
+        <div class="grid cols-2">
+          <div class="card pain-card">
+            <span class="pain-no">①</span>
+            <h4><span class="zh">自住房家庭</span><span class="en">Homeowners</span></h4>
+            <p><span class="zh">全屋用水、母婴/老人同住 → 全屋水质总控、滤芯寿命管理。</span><span class="en">Whole-house water, elderly & kids at home → whole-home control & filter-life management.</span></p>
+          </div>
+          <div class="card pain-card">
+            <span class="pain-no">②</span>
+            <h4><span class="zh">租房 / 宿舍人群</span><span class="en">Renters / dorm</span></h4>
+            <p><span class="zh">不确定水管是否老旧 → 便携、免安装、即装即用。</span><span class="en">Uncertain pipes → portable, no-install, plug-and-use.</span></p>
+          </div>
+          <div class="card pain-card">
+            <span class="pain-no">③</span>
+            <h4><span class="zh">母婴家庭</span><span class="en">Families with infants</span></h4>
+            <p><span class="zh">泡奶、宝宝洗澡 → 对余氯/重金属异常敏感。</span><span class="en">Formula & baby baths → highly sensitive to chlorine/heavy metals.</span></p>
+          </div>
+          <div class="card pain-card">
+            <span class="pain-no">④</span>
+            <h4><span class="zh">出差旅行人群</span><span class="en">Travelers</span></h4>
+            <p><span class="zh">酒店、外地水质不确定 → 便携检测、即时反馈。</span><span class="en">Unfamiliar water on the road → portable, instant feedback.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 方案 -->
+      <section class="block" id="solution">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">方案 · 从检测到健康闭环</span><span class="en">Solution · From detection to a health loop</span></p>
+          <h2><span class="zh">三位一体：监测终端 + 云平台 + 智能 App</span><span class="en">Three in one: sensors + cloud + app</span></h2>
+        </div>
+
+        <div class="loop-diagram">
+          <div class="loop-node"><span class="ico">📟</span><b><span class="zh">监测终端</span><span class="en">Sensors</span></b><span><span class="zh">双形态：入户总管 + 水龙头便携</span><span class="en">Fixed + portable</span></span></div>
+          <span class="loop-arrow">→</span>
+          <div class="loop-node"><span class="ico">☁️</span><b><span class="zh">物联网云平台</span><span class="en">IoT Cloud</span></b><span><span class="zh">MQTT 接入 · 阈值判定 · 健康分析</span><span class="en">MQTT · threshold · health engine</span></span></div>
+          <span class="loop-arrow">→</span>
+          <div class="loop-node"><span class="ico">📱</span><b><span class="zh">智能 App</span><span class="en">Smart App</span></b><span><span class="zh">实时可视化 · 健康解读 · 异常预警</span><span class="en">Visualize · interpret · alert</span></span></div>
+          <span class="loop-arrow">→</span>
+          <div class="loop-node"><span class="ico">🔧</span><b><span class="zh">联动处理</span><span class="en">Auto-resolve</span></b><span><span class="zh">净水 / 软水设备自动联动</span><span class="en">Auto-control purifier/softener</span></span></div>
+        </div>
+
+        <h3><span class="zh">三个差异化</span><span class="en">Three differentiators</span></h3>
+        <div class="grid cols-3">
+          <div class="card"><h4><span class="zh">看得见</span><span class="en">See</span></h4><p><span class="zh">双形态终端覆盖「全屋 + 多场景」，数据 24h 实时上传、手机随时看。</span><span class="en">Dual-form sensors cover whole-house & on-the-go; 24/7 real-time data.</span></p></div>
+          <div class="card"><h4><span class="zh">看得懂</span><span class="en">Understand</span></h4><p><span class="zh">把指标翻译成健康影响，给出分级预警（饮用水高风险 vs 生活用水提示）。</span><span class="en">Translate metrics into health impact with tiered alerts.</span></p></div>
+          <div class="card"><h4><span class="zh">做得了</span><span class="en">Act</span></h4><p><span class="zh">健康画像 → 个性化方案 + 设备自动联动，形成闭环。</span><span class="en">Profile → personalized plan + auto-linkage, closing the loop.</span></p></div>
+        </div>
+
+        <h3><span class="zh">竞品五维矩阵</span><span class="en">Five-dimension competitive matrix</span></h3>
+        <div class="matrix-wrap">
+          <table>
+            <thead><tr><th><span class="zh">维度</span><span class="en">Dimension</span></th><th><span class="zh">专业仪</span><span class="en">Lab</span></th><th><span class="zh">TDS 笔</span><span class="en">TDS pen</span></th><th><span class="zh">品牌 App</span><span class="en">Brand app</span></th><th><span class="zh">饮水 App</span><span class="en">Hydration</span></th><th><span class="zh">本产品</span><span class="en">Ours</span></th></tr></thead>
+            <tbody>
+              <tr><td><span class="zh">检测能力</span><span class="en">Detection</span></td><td><span class="dot5">●●●●●</span></td><td><span class="dot5">●●</span><span class="dot-dim">○○○</span></td><td><span class="dot5">●●●</span><span class="dot-dim">○○</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●●●●</span><span class="dot-dim">○</span></td></tr>
+              <tr><td><span class="zh">健康解读</span><span class="en">Interpret</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●●</span><span class="dot-dim">○○○</span></td><td><span class="dot5">●●●</span><span class="dot-dim">○○</span></td><td><span class="dot5">●●●●●</span></td></tr>
+              <tr><td><span class="zh">个性化方案</span><span class="en">Personal plan</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●●</span><span class="dot-dim">○○○</span></td><td><span class="dot5">●●</span><span class="dot-dim">○○○</span></td><td><span class="dot5">●●●●●</span></td></tr>
+              <tr><td><span class="zh">设备联动</span><span class="en">Linkage</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●●●</span><span class="dot-dim">○○</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●●●●</span><span class="dot-dim">○</span></td></tr>
+              <tr><td><span class="zh">家庭可及性</span><span class="en">Accessibility</span></td><td><span class="dot5">●</span><span class="dot-dim">○○○○</span></td><td><span class="dot5">●●●●●</span></td><td><span class="dot5">●●●●</span><span class="dot-dim">○</span></td><td><span class="dot5">●●●●●</span></td><td><span class="dot5">●●●●</span><span class="dot-dim">○</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3><span class="zh">已实现 vs 规划中（诚实边界）</span><span class="en">Shipped vs planned (honest boundary)</span></h3>
+        <table>
+          <thead><tr><th style="width:40%"><span class="zh">项</span><span class="en">Item</span></th><th style="width:14%"><span class="zh">状态</span><span class="en">Status</span></th><th><span class="zh">说明</span><span class="en">Note</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">移动应用（软著 1）</span><span class="en">Mobile app (SC #1)</span></td><td><span class="tag done"><span class="zh">已实现</span><span class="en">Shipped</span></span></td><td><span class="zh">纯前端 SPA，11 功能模块，24 项冒烟测试通过</span><span class="en">Vanilla SPA, 11 modules, 24 smoke tests pass</span></td></tr>
+            <tr><td><span class="zh">物联网云平台（软著 2）</span><span class="en">IoT cloud (SC #2)</span></td><td><span class="tag done"><span class="zh">已实现</span><span class="en">Shipped</span></span></td><td><span class="zh">Node.js REST + MQTT Broker + 阈值/健康引擎 + AES 加密</span><span class="en">Node REST + MQTT broker + engines + AES</span></td></tr>
+            <tr><td><span class="zh">硬件原型（双形态终端）</span><span class="en">Hardware (dual-form)</span></td><td><span class="tag plan"><span class="zh">规划中</span><span class="en">Planned</span></span></td><td><span class="zh">跨工科方向，当前为设计/选型阶段</span><span class="en">Cross-discipline; design/selection stage</span></td></tr>
+            <tr><td><span class="zh">机器学习 / 真实数据</span><span class="en">ML / real data</span></td><td><span class="tag plan"><span class="zh">规划中</span><span class="en">Planned</span></span></td><td><span class="zh">当前健康分析为规则引擎；ML 与真实数据为科研路线 B</span><span class="en">Current health engine is rule-based; ML + real data = research path B</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Demo -->
+      <section class="block" id="demo">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">Demo · 在线体验</span><span class="en">Demo · Try it live</span></p>
+          <h2><span class="zh">直接点两下，比任何文字都有说服力</span><span class="en">Click around — more persuasive than words</span></h2>
+        </div>
+        <div class="demo-section">
+          <div class="demo-head">
+            <h3><span class="zh">家庭水质健康智能管理移动应用（软著 1）</span><span class="en">Water Health App (Software Copyright #1)</span></h3>
+            <a class="btn-ghost" href="demo/index.html" target="_blank"><span class="zh">在新窗口打开 ↗</span><span class="en">Open in new tab ↗</span></a>
+          </div>
+          <div class="demo-frame">
+            <iframe src="demo/index.html" title="水质健康 App 在线演示" loading="lazy"></iframe>
+          </div>
+          <p style="color:rgba(255,255,255,.65); font-size:13px; margin-top:14px">
+            <span class="zh">注册任意账号即可体验（本地 Mock 数据，无需后端）。</span>
+            <span class="en">Register any account to explore (local mock data, no backend needed).</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- 指标 -->
+      <section class="block" id="metrics">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">指标 · 怎么衡量做对了</span><span class="en">Metrics · How we know it works</span></p>
+          <h2><span class="zh">北极星 + 过程指标</span><span class="en">North star + process metrics</span></h2>
+        </div>
+
+        <div class="funnel" style="margin-bottom:28px">
+          <div class="frow" style="background:var(--teal); width:100%"><span class="zh">注册</span><span class="en">Sign up</span></div>
+          <div class="frow" style="background:#1E9E90; width:90%"><span class="zh">激活设备</span><span class="en">Activate device</span></div>
+          <div class="frow" style="background:#1C8A7E; width:76%"><span class="zh">完成健康画像</span><span class="en">Complete profile</span></div>
+          <div class="frow" style="background:#1A766C; width:60%"><span class="zh">首次采纳建议</span><span class="en">First advice adopted</span></div>
+          <div class="frow" style="background:var(--deep); width:42%"><span class="zh">周活跃采纳（WAA）★ 北极星</span><span class="en">Weekly active adopters ★ North star</span></div>
+          <div class="frow" style="background:var(--deep-2); width:24%"><span class="zh">付费</span><span class="en">Pay</span></div>
+        </div>
+
+        <table>
+          <thead><tr><th><span class="zh">指标</span><span class="en">Metric</span></th><th><span class="zh">定义</span><span class="en">Definition</span></th><th><span class="zh">对应目标</span><span class="en">Goal</span></th></tr></thead>
+          <tbody>
+            <tr><td><b><span class="zh">北极星 · WAA</span><span class="en">North star · WAA</span></b></td><td><span class="zh">周内「主动查看 ≥1 且 采纳建议 ≥1」去重用户数</span><span class="en">Weekly unique users who view ≥1 & adopt ≥1 advice</span></td><td><span class="zh">同时衡量「看得见」和「用得上」</span><span class="en">Both visibility & action</span></td></tr>
+            <tr><td><span class="zh">激活</span><span class="en">Activation</span></td><td><span class="zh">设备激活率 · 健康画像完成率</span><span class="en">Device activation · profile completion</span></td><td><span class="zh">硬件→软件、个性化前提</span><span class="en">HW→SW, personalization precondition</span></td></tr>
+            <tr><td><span class="zh">核心价值</span><span class="en">Core value</span></td><td><span class="zh">健康方案采纳率 · 预警响应率 · 联动触发率</span><span class="en">Advice adoption · alert response · linkage trigger</span></td><td><span class="zh">翻译层是否有效、闭环是否闭合</span><span class="en">Does the loop close?</span></td></tr>
+            <tr><td><span class="zh">质量</span><span class="en">Quality</span></td><td><span class="zh">预警准确率（真异常 / 全部报警）</span><span class="en">Alert precision</span></td><td><span class="zh">信任基础</span><span class="en">Trust</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 验证 -->
+      <section class="block" id="verification">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">验证 · 做到哪一步了</span><span class="en">Validation · where we are</span></p>
+          <h2><span class="zh">逻辑已验证，用户与数据待补</span><span class="en">Logic validated; users & data pending</span></h2>
+        </div>
+        <table>
+          <thead><tr><th><span class="zh">阶段</span><span class="en">Stage</span></th><th style="width:16%"><span class="zh">状态</span><span class="en">Status</span></th><th><span class="zh">内容</span><span class="en">Detail</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">逻辑验证</span><span class="en">Logic</span></td><td><span class="tag done"><span class="zh">已完成</span><span class="en">Done</span></span></td><td><span class="zh">前端 24 项冒烟测试 + 后端核心逻辑测试通过</span><span class="en">24 smoke tests + backend logic pass</span></td></tr>
+            <tr><td><span class="zh">可用性验证</span><span class="en">Usability</span></td><td><span class="tag plan"><span class="zh">进行中</span><span class="en">Ongoing</span></span></td><td><span class="zh">部署 demo、找 5–10 名目标用户试用、记录反馈</span><span class="en">Deploy demo, 5–10 target users, log feedback</span></td></tr>
+            <tr><td><span class="zh">真实数据验证</span><span class="en">Real data</span></td><td><span class="tag plan"><span class="zh">未开始</span><span class="en">Not started</span></span></td><td><span class="zh">接入公开数据集 / 实地采样</span><span class="en">Public datasets / field sampling</span></td></tr>
+            <tr><td><span class="zh">商业化验证</span><span class="en">Commercial</span></td><td><span class="tag plan"><span class="zh">未开始</span><span class="en">Not started</span></span></td><td><span class="zh">一手问卷 + 试点验证付费意愿</span><span class="en">Primary research + pilot for willingness to pay</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 复盘 -->
+      <section class="block" id="reflection">
+        <div class="sec-head">
+          <p class="kicker"><span class="zh">复盘 · 三个关键决策</span><span class="en">Reflection · Three key decisions</span></p>
+          <h2><span class="zh">产品判断，而不是堆功能</span><span class="en">Product judgment over feature-stacking</span></h2>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card"><h4><span class="zh">① 打「翻译层」，不拼精度</span><span class="en">① Compete on interpretation, not precision</span></h4><p><span class="zh">市场不缺更准的检测仪，缺的是让用户理解并行动的翻译层。</span><span class="en">The market has precision; it lacks the layer that drives understanding and action.</span></p></div>
+          <div class="card"><h4><span class="zh">② 数据源解耦，硬件不卡壳</span><span class="en">② Decouple data, don't block on hardware</span></h4><p><span class="zh">Mock/HTTP/MQTT 三实现可切换，硬件没落地软件也能完整交付迭代。</span><span class="en">Swappable Mock/HTTP/MQTT sources let the software ship before hardware.</span></p></div>
+          <div class="card"><h4><span class="zh">③ 先规则引擎，再 ML/LLM 增强</span><span class="en">③ Rule engine first, ML/LLM later</span></h4><p><span class="zh">MVP 用规则快速验证价值，后续升级 LLM + 文献知识库（RAG）。</span><span class="en">Validate value with rules, then upgrade to LLM + RAG.</span></p></div>
+        </div>
+
+        <h3><span class="zh">下一步</span><span class="en">Next steps</span></h3>
+        <ul>
+          <li><span class="zh">补真实用户调研数据（问卷 + 访谈）</span><span class="en">Gather real user research (survey + interviews)</span></li>
+          <li><span class="zh">demo 上线 + 小规模试用复盘</span><span class="en">Deploy demo + small-scale trial & retro</span></li>
+          <li><span class="zh">LLM 健康建议 POC（对接科研路线 B）</span><span class="en">LLM health-advice POC (research path B)</span></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div class="foot-note">
+        <span class="zh">本项目为大学生创新创业训练计划成果，两项软件著作权归河海大学所有。文中二手数据均标注来源与年份；一手数据为占位示例，待真实问卷替换。软件为 Mock 数据演示，硬件与机器学习模型处于规划阶段。</span>
+        <span class="en">A college innovation project; software copyrights belong to Hohai University. Secondary data cited with source & year; primary data is placeholder pending real surveys. Software runs on mock data; hardware & ML are planned.</span>
+      </div>
+      <div>
+        <a href="https://github.com/" target="_blank"><span class="zh">GitHub</span><span class="en">GitHub</span></a>
+        <span style="margin:0 8px;color:rgba(255,255,255,.3)">·</span>
+        <a href="README.md"><span class="zh">仓库说明</span><span class="en">Repo README</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

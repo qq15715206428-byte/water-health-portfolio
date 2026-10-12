@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="数据指标体系与埋点设计">
+  <title>指标与埋点 · 水质健康作品集</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="doc-hero editable">
+    <div class="doc-hero-inner">
+      <p class="eyebrow"><span class="zh">交付物 ④ · 数据指标与埋点</span><span class="en">Deliverable ④ · Metrics &amp; Analytics</span></p>
+      <h1><span class="zh">数据指标体系与埋点设计</span><span class="en">Metrics &amp; Analytics Design</span></h1>
+      <p class="sub">
+        <span class="zh">从产品目标反推「可衡量的指标」，再落到「埋哪些点」。让决策有据可依，而不是凭感觉迭代。</span>
+        <span class="en">From goals back to measurable metrics, then to what to instrument. Decisions driven by data, not instinct.</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="doc-body">
+    <div class="content-inner editable">
+
+      <section class="block">
+        <h2><span class="zh">北极星指标（North Star）</span><span class="en">North Star Metric</span></h2>
+        <blockquote>
+          <b><span class="zh">每周主动查看水质并采纳健康建议的活跃用户数（Weekly Active Adopters, WAA）</span><span class="en">Weekly Active Adopters — users who actively view water quality AND adopt advice (WAA)</span></b>
+        </blockquote>
+        <p><span class="zh">为什么是它：它同时衡量两条核心价值——「看得见」（主动来看，而非被推送才看）与「用得上」（采纳了建议，说明翻译层真正产生了行动）。只看 DAU 会把「打开 app」误当成功；WAA 把「打开」升级为「采纳」。</span><span class="en">It measures both core values: “see” (active viewing, not pushed) and “act” (adopting advice means the translation layer drove action). DAU mistakes “opened the app” for success; WAA upgrades “open” to “adopt”.</span></p>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">指标体系（北极星 + 过程指标）</span><span class="en">Metric hierarchy</span></h2>
+        <table>
+          <thead><tr><th style="width:16%"><span class="zh">层级</span><span class="en">Layer</span></th><th style="width:26%"><span class="zh">指标</span><span class="en">Metric</span></th><th><span class="zh">定义</span><span class="en">Definition</span></th></tr></thead>
+          <tbody>
+            <tr><td><b><span class="zh">北极星</span><span class="en">North star</span></b></td><td>WAA</td><td><span class="zh">周内「主动查看 ≥1 且 采纳建议 ≥1」去重用户数</span><span class="en">Weekly unique users viewing ≥1 &amp; adopting ≥1</span></td></tr>
+            <tr><td rowspan="2"><span class="zh">激活</span><span class="en">Activation</span></td><td><span class="zh">设备激活率</span><span class="en">Device activation</span></td><td><span class="zh">绑定设备 / 注册用户</span><span class="en">bound / registered</span></td></tr>
+            <tr><td><span class="zh">画像完成率</span><span class="en">Profile completion</span></td><td><span class="zh">完成画像 / 激活用户</span><span class="en">completed / activated</span></td></tr>
+            <tr><td><span class="zh">留存</span><span class="en">Retention</span></td><td><span class="zh">7/30 日留存</span><span class="en">D7/D30</span></td><td><span class="zh">第 7/30 天仍活跃占比</span><span class="en">% still active at day 7/30</span></td></tr>
+            <tr><td rowspan="3"><span class="zh">核心价值</span><span class="en">Core value</span></td><td><span class="zh">方案采纳率</span><span class="en">Advice adoption</span></td><td><span class="zh">采纳 / 展示</span><span class="en">adopted / shown</span></td></tr>
+            <tr><td><span class="zh">预警响应率</span><span class="en">Alert response</span></td><td><span class="zh">预警后联动/处理比例</span><span class="en">% alerts acted on</span></td></tr>
+            <tr><td><span class="zh">联动触发率</span><span class="en">Linkage trigger</span></td><td><span class="zh">自动联动 / 需处理异常</span><span class="en">auto / anomalies</span></td></tr>
+            <tr><td><span class="zh">质量</span><span class="en">Quality</span></td><td><span class="zh">预警准确率</span><span class="en">Alert precision</span></td><td><span class="zh">真异常 /（真异常+误报）</span><span class="en">true / (true + false)</span></td></tr>
+            <tr><td><span class="zh">商业</span><span class="en">Business</span></td><td><span class="zh">付费转化率</span><span class="en">Pay conversion</span></td><td><span class="zh">付费 / 活跃用户</span><span class="en">paid / active</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">指标漏斗</span><span class="en">Metric funnel</span></h2>
+        <div class="funnel" style="margin-bottom:16px">
+          <div class="frow" style="background:var(--teal); width:100%"><span class="zh">注册</span><span class="en">Sign up</span></div>
+          <div class="frow" style="background:#1E9E90; width:90%"><span class="zh">激活设备</span><span class="en">Activate device</span></div>
+          <div class="frow" style="background:#1C8A7E; width:76%"><span class="zh">完成健康画像</span><span class="en">Complete profile</span></div>
+          <div class="frow" style="background:#1A766C; width:60%"><span class="zh">首次采纳建议</span><span class="en">First adoption</span></div>
+          <div class="frow" style="background:var(--deep); width:42%"><span class="zh">周活跃采纳 WAA ★</span><span class="en">WAA ★</span></div>
+          <div class="frow" style="background:var(--deep-2); width:24%"><span class="zh">付费</span><span class="en">Pay</span></div>
+        </div>
+        <p><span class="zh">每一级都是前一级的子集；漏斗的「泄漏点」就是产品要优化的地方。</span><span class="en">Each tier is a subset of the last; the leak points are where the product must improve.</span></p>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">埋点事件表</span><span class="en">Event tracking table</span></h2>
+        <p><span class="zh">埋点原则：事件驱动（以「用户做了什么」为单位）、最小必要（只埋能回答指标的）、隐私优先（只上传行为与脱敏统计，不上传原始健康画像/水质读数）。</span><span class="en">Principles: event-driven, minimal, privacy-first (behavior + anonymized stats only — never raw health profile or water readings).</span></p>
+        <table>
+          <thead><tr><th style="width:24%"><span class="zh">事件</span><span class="en">Event</span></th><th><span class="zh">触发时机</span><span class="en">When</span></th><th><span class="zh">对应指标</span><span class="en">Metric</span></th></tr></thead>
+          <tbody>
+            <tr><td><code>register</code></td><td><span class="zh">注册成功</span><span class="en">Signed up</span></td><td><span class="zh">激活漏斗</span><span class="en">Funnel</span></td></tr>
+            <tr><td><code>device_bind</code></td><td><span class="zh">绑定设备</span><span class="en">Device bound</span></td><td><span class="zh">设备激活率</span><span class="en">Activation</span></td></tr>
+            <tr><td><code>profile_complete</code></td><td><span class="zh">完成画像</span><span class="en">Profile done</span></td><td><span class="zh">画像完成率</span><span class="en">Completion</span></td></tr>
+            <tr><td><code>view_dashboard</code></td><td><span class="zh">打开仪表盘（主动/被动）</span><span class="en">Dashboard open</span></td><td>WAA <span class="zh">「主动查看」</span><span class="en">“active view”</span></td></tr>
+            <tr><td><code>advice_show</code> / <code>advice_adopt</code></td><td><span class="zh">展示 / 采纳建议</span><span class="en">Shown / adopted</span></td><td><span class="zh">采纳率分母 / WAA「采纳」</span><span class="en">Denominator / WAA “adopt”</span></td></tr>
+            <tr><td><code>alert_trigger</code></td><td><span class="zh">触发分级预警</span><span class="en">Alert fired</span></td><td><span class="zh">预警质量</span><span class="en">Alert quality</span></td></tr>
+            <tr><td><code>linkage_action</code></td><td><span class="zh">设备联动（手动/自动）</span><span class="en">Linkage (manual/auto)</span></td><td><span class="zh">联动触发率</span><span class="en">Linkage rate</span></td></tr>
+            <tr><td><code>report_export</code></td><td><span class="zh">导出健康报告</span><span class="en">Report export</span></td><td><span class="zh">留存/分享</span><span class="en">Retention/share</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">指标如何驱动决策</span><span class="en">How metrics drive decisions</span></h2>
+        <table>
+          <thead><tr><th style="width:40%"><span class="zh">数据信号</span><span class="en">Signal</span></th><th><span class="zh">产品动作</span><span class="en">Action</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">激活高、画像完成低</span><span class="en">Activation high, profile low</span></td><td><span class="zh">简化画像流程 / 提供「跳过 + 默认画像」</span><span class="en">Simplify profile / offer default</span></td></tr>
+            <tr><td><span class="zh">建议展示多、采纳低</span><span class="en">Shown high, adopt low</span></td><td><span class="zh">优化文案 / 增加「一键执行」</span><span class="en">Improve copy / one-tap act</span></td></tr>
+            <tr><td><span class="zh">预警多、联动低</span><span class="en">Alerts high, linkage low</span></td><td><span class="zh">增加「先预览再执行」确认机制</span><span class="en">Preview-before-act confirmation</span></td></tr>
+            <tr><td><span class="zh">7 日留存低</span><span class="en">D7 low</span></td><td><span class="zh">增加周报推送 / 趋势变化提醒</span><span class="en">Weekly report / trend-change alerts</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">当前阶段说明（诚实边界）</span><span class="en">Current stage (honest boundary)</span></h2>
+        <p><span class="zh">产品当前为 Mock 数据演示阶段，尚无真实用户量；上述指标为「设计与目标」，不是已达成数据。待 demo 上线 + 小规模试用后，用真实事件数据跑通第一版指标看板。</span><span class="en">The product is at the mock-data demo stage with no real users; these metrics are design targets, not achieved numbers. After demo launch + a small trial, we'll build the first metrics dashboard from real events.</span></p>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div class="foot-note"><span class="zh">交付物 ④ · 指标与埋点。指标为目标值，非已达成数据。</span><span class="en">Deliverable ④ · Metrics. Targets, not achieved numbers.</span></div>
+      <div><a href="../index.html"><span class="zh">← 返回案例</span><span class="en">← Back to case</span></a></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

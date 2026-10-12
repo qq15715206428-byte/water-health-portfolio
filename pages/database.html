@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="数据库设计 —— 家庭水质健康管理系统">
+  <title>数据库设计 · 水质健康作品集</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="doc-hero editable">
+    <div class="doc-hero-inner">
+      <p class="eyebrow"><span class="zh">交付物 ⑧ · 数据库设计</span><span class="en">Deliverable ⑧ · Database Design</span></p>
+      <h1><span class="zh">SQL / ER 数据库设计</span><span class="en">SQL / ER Database Design</span></h1>
+      <p class="sub">
+        <span class="zh">「水质—健康关联数据库」的关系型设计（申报书核心成果之一）。MySQL 落地 DDL + SQLite 可运行验证。</span>
+        <span class="en">Relational design for the water–health database (a core proposal deliverable), with MySQL DDL + a runnable SQLite validation.</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="doc-body">
+    <div class="content-inner editable">
+
+      <section class="block">
+        <blockquote>
+          <span class="zh">诚实边界：两套软著的实际实现为轻量 JSON 文件持久化（Node 内置 <code>fs</code> 落盘，无编译依赖、开箱即用）。本页给出的是<b>规模化后的关系型设计</b>——用于展示数据库设计能力，支撑未来多用户/多设备场景。</span>
+          <span class="en">Honest boundary: the shipped copyrights use lightweight JSON-file persistence (Node's built-in <code>fs</code>, zero dependencies). This page shows the <b>relational design for scale</b> — to demonstrate database skills and support future multi-user/multi-device scenarios.</span>
+        </blockquote>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">表清单与用途（10 张表）</span><span class="en">Tables (10)</span></h2>
+        <table>
+          <thead><tr><th style="width:22%"><span class="zh">表</span><span class="en">Table</span></th><th style="width:40%"><span class="zh">用途</span><span class="en">Purpose</span></th><th><span class="zh">软著实际来源</span><span class="en">Real source</span></th></tr></thead>
+          <tbody>
+            <tr><td><code>users</code></td><td><span class="zh">用户账号</span><span class="en">Accounts</span></td><td><code>data/user.json</code></td></tr>
+            <tr><td><code>health_profiles</code></td><td><span class="zh">健康画像（皮肤/头皮/敏感点/家庭成员）</span><span class="en">Health profile</span></td><td><span class="zh">前端健康画像视图</span><span class="en">Frontend profile view</span></td></tr>
+            <tr><td><code>devices</code></td><td><span class="zh">监测终端（固定式/便携式）</span><span class="en">Sensors</span></td><td><code>data/device.json</code></td></tr>
+            <tr><td><code>device_bindings</code></td><td><span class="zh">用户↔设备多对多绑定</span><span class="en">User↔device M:N</span></td><td><span class="zh">设备管理视图</span><span class="en">Device view</span></td></tr>
+            <tr><td><code>metrics</code></td><td><span class="zh">水质指标字典（阈值/单位）</span><span class="en">Metric dictionary</span></td><td><code>server/config.js</code> <code>METRICS</code></td></tr>
+            <tr><td><code>readings</code></td><td><span class="zh">水质时序读数</span><span class="en">Time-series readings</span></td><td><code>data/reading.json</code></td></tr>
+            <tr><td><code>alerts</code></td><td><span class="zh">分级预警记录</span><span class="en">Alert log</span></td><td><code>data/alert.json</code></td></tr>
+            <tr><td><code>linkage_devices</code></td><td><span class="zh">可联动设备（净水器/软水机…）</span><span class="en">Linkable devices</span></td><td><code>data/linkage.json</code></td></tr>
+            <tr><td><code>linkage_actions</code></td><td><span class="zh">联动控制动作日志</span><span class="en">Action log</span></td><td><code>linkageEngine.js</code></td></tr>
+            <tr><td><code>health_advice</code></td><td><span class="zh">健康建议库（规则引擎映射）</span><span class="en">Advice rule library</span></td><td><code>healthEngine.js</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">实体关系（ER）</span><span class="en">Entity relationships</span></h2>
+        <table>
+          <thead><tr><th><span class="zh">关系</span><span class="en">Relationship</span></th><th><span class="zh">基数</span><span class="en">Cardinality</span></th></tr></thead>
+          <tbody>
+            <tr><td><code>users</code> → <code>health_profiles</code></td><td><span class="zh">1 : 0..1（拥有）</span><span class="en">1 : 0..1</span></td></tr>
+            <tr><td><code>users</code> → <code>device_bindings</code> ← <code>devices</code></td><td><span class="zh">多对多（绑定）</span><span class="en">M : N</span></td></tr>
+            <tr><td><code>devices</code> → <code>readings</code> ← <code>metrics</code></td><td><span class="zh">1 : N（读数度量）</span><span class="en">1 : N</span></td></tr>
+            <tr><td><code>devices</code> / <code>metrics</code> → <code>alerts</code></td><td><span class="zh">1 : N（触发/关联）</span><span class="en">1 : N</span></td></tr>
+            <tr><td><code>alerts</code> / <code>linkage_devices</code> → <code>linkage_actions</code></td><td><span class="zh">1 : N（触发/被控）</span><span class="en">1 : N</span></td></tr>
+            <tr><td><code>metrics</code> → <code>health_advice</code></td><td><span class="zh">1 : N（匹配建议）</span><span class="en">1 : N</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">关键 DDL 片段</span><span class="en">Key DDL excerpt</span></h2>
+<pre>CREATE TABLE metrics (
+  metric_key VARCHAR(32)   NOT NULL COMMENT '指标键：chlorine/hardness/ph/turbidity/temp/heavyMetal',
+  name       VARCHAR(16)   NOT NULL COMMENT '中文名',
+  unit       VARCHAR(16)   NULL     COMMENT '单位：mg/L/NTU/℃/ppb',
+  safe_min   DECIMAL(8,2)  NULL     COMMENT '正常（绿）下界',
+  safe_max   DECIMAL(8,2)  NULL     COMMENT '正常（绿）上界',
+  warn_min   DECIMAL(8,2)  NULL     COMMENT '预警（黄）下界',
+  warn_max   DECIMAL(8,2)  NULL     COMMENT '预警（黄）上界',
+  PRIMARY KEY (metric_key)
+) ENGINE=InnoDB COMMENT='水质指标字典（三档阈值）';
+
+CREATE TABLE readings (
+  id          BIGINT       NOT NULL AUTO_INCREMENT,
+  device_id   VARCHAR(36)  NOT NULL,
+  metric_key  VARCHAR(32)  NOT NULL,
+  value       DECIMAL(10,3) NOT NULL,
+  recorded_at DATETIME     NOT NULL,
+  PRIMARY KEY (id),
+  KEY idx_readings_lookup (device_id, metric_key, recorded_at),
+  CONSTRAINT fk_reading_device FOREIGN KEY (device_id)  REFERENCES devices (id),
+  CONSTRAINT fk_reading_metric FOREIGN KEY (metric_key) REFERENCES metrics (metric_key)
+) ENGINE=InnoDB COMMENT='水质时序读数';</pre>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">文件与运行验证</span><span class="en">Files &amp; runnable validation</span></h2>
+        <table>
+          <thead><tr><th style="width:34%"><span class="zh">文件</span><span class="en">File</span></th><th><span class="zh">内容</span><span class="en">Content</span></th></tr></thead>
+          <tbody>
+            <tr><td><code>schema.sql</code></td><td><span class="zh">MySQL 兼容 DDL（建表 + 外键 + 索引）</span><span class="en">MySQL DDL</span></td></tr>
+            <tr><td><code>sqlite/schema.sqlite.sql</code></td><td><span class="zh">SQLite 落地 DDL + 种子数据</span><span class="en">SQLite DDL + seed</span></td></tr>
+            <tr><td><code>sqlite/queries.sql</code></td><td><span class="zh">示例查询（对应指标体系关键分析）</span><span class="en">Example queries</span></td></tr>
+            <tr><td><code>sqlite/run.py</code></td><td><span class="zh">执行 schema + 查询，验证可运行并打印结果</span><span class="en">Run schema + queries, print results</span></td></tr>
+          </tbody>
+        </table>
+        <p><span class="zh">运行验证：<code>python sqlite/run.py</code>（依赖 Python 内置 <code>sqlite3</code>，无需额外安装）。</span><span class="en">Run: <code>python sqlite/run.py</code> (built-in <code>sqlite3</code>, no extra install).</span></p>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div class="foot-note"><span class="zh">交付物 ⑧ · 数据库设计。软著实为 JSON 存储，本页为规模化关系型设计。</span><span class="en">Deliverable ⑧ · Database. Shipped as JSON; this is the relational design for scale.</span></div>
+      <div><a href="../index.html"><span class="zh">← 返回案例</span><span class="en">← Back to case</span></a></div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
