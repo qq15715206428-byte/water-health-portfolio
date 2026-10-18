@@ -18,7 +18,7 @@ plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "DejaVu Sans"]
 plt.rcParams["axes.unicode_minus"] = False
 plt.rcParams["figure.dpi"] = 120
 
-# 统一配色（呼应产品「红黄绿三档」）
+# 统一配色（呼应产品“红黄绿三档”）
 C_SAFE = "#4CAF50"   # 绿
 C_WARN = "#FB8C00"   # 黄
 C_DANGER = "#E53935" # 红

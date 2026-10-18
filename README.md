@@ -5,7 +5,7 @@
 > 石佳 · 河海大学 · 商学院 · 信息管理与信息系统 2024 级（大三）· 项目负责人
 > Shi Jia · Hohai University · Information Management &amp; Information Systems · Project Lead
 
-一个**中英双语、可在线编辑**的交互式作品集网站，把「大学生创新创业训练计划」（大创）的「家庭水质健康智能管理」项目，从产品经理视角复盘为完整的 Case Study，并**内嵌可交互的 live demo**。已产出两项软件著作权。
+一个**中英双语、可在线编辑**的交互式作品集网站，把“大学生创新创业训练计划”（大创）的“家庭水质健康智能管理”项目，从产品经理视角复盘为完整的 Case Study，并**内嵌可交互的 live demo**。已产出两项软件著作权。
 
 An interactive, bilingual (zh/en), in-browser-editable portfolio site that turns the "Family Water Quality Health Management" college-innovation project into a full PM case study — with an **embedded interactive live demo**. Two software copyrights shipped.
 
@@ -20,7 +20,7 @@ An interactive, bilingual (zh/en), in-browser-editable portfolio site that turns
 
 ## 一句话定位 / One-liner
 
-> 不做「报数机器」，做「懂你、替你处理」的家庭水质健康管家 —— 把水质数据翻译成**健康影响 + 个性化方案 + 设备联动**，形成「监测—分析—预警—处理」闭环。
+> 不做“报数机器”，做“懂你、替你处理”的家庭水质健康管家 —— 把水质数据翻译成**健康影响 + 个性化方案 + 设备联动**，形成“监测—分析—预警—处理”闭环。
 >
 > Not a "number-teller", but a health steward that understands and acts for you — turning water data into health impact + a personalized plan + auto linkage, closing the "monitor–analyze–alert–resolve" loop.
 
@@ -64,7 +64,7 @@ python -m http.server 8080
 网站功能：
 
 - 🌐 **语言切换**：顶部按钮一键切中/英（记忆到 localStorage）
-- ✏️ **开启编辑**：正文可直接在浏览器里改，改完「导出 HTML」替换本地文件
+- ✏️ **开启编辑**：正文可直接在浏览器里改，改完“导出 HTML”替换本地文件
 - 📱 **内嵌 demo**：Case Study 页内嵌水质健康 App，可直接注册体验（Mock 数据）
 
 ---
@@ -98,7 +98,7 @@ gh api repos/{owner}/water-health-portfolio/pages -f source[branch]=main -f sour
 ## 📌 诚实边界 / Honest boundary
 
 - **已实现**：移动应用（软著 1）、物联网云平台（软著 2）——均为可运行软件。
-- **规划中**：硬件终端（双形态监测器）、机器学习 / 真实数据接入、LLM+RAG 健康咨询。
+- **规划中**：硬件终端（便携款 + 旗舰家用款双形态监测器）、机器学习 / 真实数据接入、LLM+RAG 健康咨询。
 - **数据说明**：二手数据均标注来源与年份；一手调研为占位示例，待真实问卷替换；EDA 为模拟数据。
 
 ---

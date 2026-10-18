@@ -17,7 +17,15 @@ echo ----------------------------------------------------
 
 set PORT=8080
 
-rem 依次尝试 python / py / npx
+rem 优先探测 Microsoft Store 版真实 Python（绕过 0 字节的"应用执行别名"存根）
+set "REALPY="
+for /d %%D in ("%LOCALAPPDATA%\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.*") do if exist "%%D\python.exe" set "REALPY=%%D\python.exe"
+if defined REALPY (
+    echo 已检测到 Python，启动服务中...
+    start "水质健康管家-服务器" cmd /k "%REALPY% -m http.server %PORT%"
+    goto :open
+)
+
 where python >nul 2>nul
 if %errorlevel%==0 (
     echo 已检测到 Python，启动服务中...
@@ -35,7 +43,7 @@ if %errorlevel%==0 (
 where npx >nul 2>nul
 if %errorlevel%==0 (
     echo 已检测到 Node.js，启动服务中...
-    start "水质健康管家-服务器" cmd /k "npx http-server -p %PORT%"
+    start "水质健康管家-服务器" cmd /k "npx --yes http-server -p %PORT%"
     goto :open
 )
 
@@ -47,7 +55,6 @@ pause
 exit /b 1
 
 :open
-rem 等服务器就绪后再打开浏览器
 timeout /t 2 /nobreak >nul
 start "" http://localhost:%PORT%
 echo 浏览器已打开。如果页面还没显示出来，稍等几秒后刷新一下即可。

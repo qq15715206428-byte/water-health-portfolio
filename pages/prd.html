@@ -14,7 +14,7 @@
       <p class="eyebrow"><span class="zh">交付物 ② · 产品需求文档</span><span class="en">Deliverable ② · PRD</span></p>
       <h1><span class="zh">产品需求文档（PRD）</span><span class="en">Product Requirements Document</span></h1>
       <p class="sub">
-        <span class="zh">基于两套软著的实际实现整理，而非照搬申报书初稿。定义「监测—分析—预警—处理」闭环的功能边界与业务规则。</span>
+        <span class="zh">基于两套软著的实际实现整理，而非照搬申报书初稿。定义“监测—分析—预警—处理”闭环的功能边界与业务规则。</span>
         <span class="en">Written from the two shipped software copyrights — not the original proposal. Defines the feature scope and business rules of the monitor–analyze–alert–resolve loop.</span>
       </p>
     </div>
@@ -46,6 +46,21 @@
       </section>
 
       <section class="block">
+        <h2><span class="zh">硬件终端形态</span><span class="en">Hardware forms</span></h2>
+        <p><span class="zh">产品采用“便携款”与“旗舰家用款”双形态终端，分别覆盖“外出便携”与“家庭全屋”两类核心场景，与上述“监测—分析—预警—处理”闭环配套。</span><span class="en">Two hardware forms — a portable unit and a flagship home unit — cover both on-the-go and whole-home scenarios, paired with the monitor–analyze–alert–resolve loop.</span></p>
+        <div class="grid cols-2 device-showcase">
+          <figure>
+            <img src="../assets/device-portable.jpg" alt="便携款水质检测仪">
+            <figcaption><span class="zh"><b>便携款</b> —— 租房 / 宿舍 / 出差旅行，免安装、即装即用，随身检测每一杯水。</span><span class="en"><b>Portable</b> — rent / dorm / travel; no install, test any cup on the go.</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/device-home.jpg" alt="旗舰家用款全屋水质监测终端">
+            <figcaption><span class="zh"><b>旗舰家用款</b> —— 自住房 / 母婴家庭，入户总管、全屋总控，24 小时守护全屋水质。</span><span class="en"><b>Flagship home</b> — owner-occupied / infant family; whole-home, 24/7 monitoring.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="block">
         <h2><span class="zh">功能清单 · 移动应用（软著 1，11 模块）</span><span class="en">Features · App (SC #1, 11 modules)</span></h2>
         <table>
           <thead><tr><th style="width:14%"><span class="zh">#</span><span class="en">#</span></th><th style="width:22%"><span class="zh">模块</span><span class="en">Module</span></th><th><span class="zh">说明</span><span class="en">Description</span></th><th style="width:12%"><span class="zh">优先级</span><span class="en">Priority</span></th></tr></thead>
@@ -66,6 +81,29 @@
       </section>
 
       <section class="block">
+        <h2><span class="zh">核心界面预览</span><span class="en">Core screens</span></h2>
+        <p><span class="zh">以下为可交互演示 Demo 的实际界面截图，对应上表中 P0 优先级的核心模块。</span><span class="en">Actual screenshots from the interactive demo, matching the P0 modules above.</span></p>
+        <div class="grid cols-4 shot-showcase">
+          <figure>
+            <img src="../assets/demo-dashboard.jpg" alt="水质仪表盘">
+            <figcaption><b><span class="zh">水质仪表盘</span><span class="en">Dashboard</span></b><br><span class="zh">综合评分 + 六项指标</span><span class="en">Composite score + 6 metrics</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/demo-realtime.jpg" alt="实时监测">
+            <figcaption><b><span class="zh">实时监测</span><span class="en">Realtime</span></b><br><span class="zh">定时刷新、达标状态</span><span class="en">Periodic refresh, pass/fail</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/demo-plan.jpg" alt="健康方案">
+            <figcaption><b><span class="zh">健康方案</span><span class="en">Advice</span></b><br><span class="zh">画像 + 指标 → 建议</span><span class="en">Profile + metrics → advice</span></figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/demo-history.jpg" alt="历史趋势">
+            <figcaption><b><span class="zh">历史趋势</span><span class="en">Trends</span></b><br><span class="zh">日 / 周 / 月折线</span><span class="en">Day / week / month lines</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="block">
         <h2><span class="zh">物联网云平台（软著 2）</span><span class="en">IoT Cloud Platform (SC #2)</span></h2>
         <table>
           <thead><tr><th style="width:24%"><span class="zh">能力</span><span class="en">Capability</span></th><th><span class="zh">说明</span><span class="en">Description</span></th></tr></thead>
@@ -82,27 +120,100 @@
 
       <section class="block">
         <h2><span class="zh">信息架构</span><span class="en">Information architecture</span></h2>
-<pre>登录/注册
-  └─ 主界面（底部标签导航）
-      ├─ 首页（水质仪表盘：综合评分 + 六项指标卡片）
-      ├─ 实时监测
-      ├─ 历史趋势（日/周/月切换）
-      ├─ 健康画像（皮肤/头皮/敏感点/家庭成员）
-      ├─ 健康方案（饮水/护肤/护发建议）
-      ├─ 异常预警（分级 + 记录）
-      ├─ 设备（设备管理 + 设备联动）
-      ├─ 健康报告（周报/月报）
-      └─ 我的（系统设置）</pre>
+        <div class="ia-diagram">
+          <div class="ia-root"><span class="zh">登录 / 注册</span><span class="en">Login / Sign up</span></div>
+          <div class="ia-connector"></div>
+          <div class="ia-bar"><span class="zh">主界面 · 底部标签导航（首页 / 实时 / 健康 / 设备 / 我的）</span><span class="en">Main app · bottom tab bar (Home / Realtime / Health / Devices / Me)</span></div>
+          <div class="ia-connector"></div>
+          <div class="ia-branches">
+            <div class="ia-col"><h5><span class="zh">首页</span><span class="en">Home</span></h5><ul>
+              <li><span class="zh">水质仪表盘</span><span class="en">Dashboard</span></li>
+              <li><span class="zh">历史趋势</span><span class="en">Trends</span></li>
+              <li><span class="zh">异常预警</span><span class="en">Alerts</span></li>
+            </ul></div>
+            <div class="ia-col"><h5><span class="zh">实时</span><span class="en">Realtime</span></h5><ul>
+              <li><span class="zh">实时监测</span><span class="en">Realtime monitor</span></li>
+            </ul></div>
+            <div class="ia-col"><h5><span class="zh">健康</span><span class="en">Health</span></h5><ul>
+              <li><span class="zh">健康画像</span><span class="en">Profile</span></li>
+              <li><span class="zh">健康方案</span><span class="en">Advice</span></li>
+              <li><span class="zh">健康报告</span><span class="en">Report</span></li>
+            </ul></div>
+            <div class="ia-col"><h5><span class="zh">设备</span><span class="en">Devices</span></h5><ul>
+              <li><span class="zh">设备管理</span><span class="en">Manage</span></li>
+              <li><span class="zh">设备联动</span><span class="en">Linkage</span></li>
+            </ul></div>
+            <div class="ia-col"><h5><span class="zh">我的</span><span class="en">Me</span></h5><ul>
+              <li><span class="zh">系统设置</span><span class="en">Settings</span></li>
+            </ul></div>
+          </div>
+        </div>
       </section>
 
       <section class="block">
         <h2><span class="zh">核心业务规则</span><span class="en">Core business rules</span></h2>
         <h3><span class="zh">三档阈值判定</span><span class="en">Three-tier threshold</span></h3>
         <p><span class="zh">每项指标定义 <code>safe</code>（绿）/ <code>warn</code>（黄）/ <code>danger</code>（红）三档，驱动仪表盘评分颜色、预警分级、联动触发。⚠️ 改阈值需同步更新前端与后端的 <code>METRICS</code>。</span><span class="en">Each metric has <code>safe</code>/<code>warn</code>/<code>danger</code> tiers driving score color, alert level, and linkage. ⚠️ Changing a threshold updates both frontend &amp; backend <code>METRICS</code>.</span></p>
+        <div class="grid cols-3">
+          <div class="card tier-card s"><h4><span class="zh"><code>safe</code> · 正常</span><span class="en"><code>safe</code> · normal</span></h4><p><span class="zh">指标在安全区间内，绿色显示，无需处理。</span><span class="en">Within safe range, shown green.</span></p></div>
+          <div class="card tier-card w"><h4><span class="zh"><code>warn</code> · 提示</span><span class="en"><code>warn</code> · advisory</span></h4><p><span class="zh">接近或略超阈值，黄色提示，建议关注。</span><span class="en">Near or over threshold, yellow advisory.</span></p></div>
+          <div class="card tier-card d"><h4><span class="zh"><code>danger</code> · 高风险</span><span class="en"><code>danger</code> · high-risk</span></h4><p><span class="zh">明显超标，红色预警并触发联动处理。</span><span class="en">Clearly over, red alert + linkage.</span></p></div>
+        </div>
         <h3><span class="zh">健康画像 → 个性化方案</span><span class="en">Profile → personalized plan</span></h3>
-        <p><span class="zh">示例规则：<code>余氯超标 + 敏感肌 → 「洗漱前放水 30s + 使用除氯花洒」</code>。</span><span class="en">Example rule: <code>high chlorine + sensitive skin → “flush 30s + chlorine-filtering shower head”</code>.</span></p>
+        <p><span class="zh">示例规则：<code>余氯超标 + 敏感肌 → “洗漱前放水 30s + 使用除氯花洒”</code>。</span><span class="en">Example rule: <code>high chlorine + sensitive skin → “flush 30s + chlorine-filtering shower head”</code>.</span></p>
         <h3><span class="zh">分级预警</span><span class="en">Tiered alerts</span></h3>
-        <p><span class="zh">区分「饮用水高风险」（立即停用提醒）与「生活用水提示」（建议性）。</span><span class="en">Distinguish “drinking high-risk” (stop now) from “household advisory”.</span></p>
+        <p><span class="zh">区分“饮用水高风险”（立即停用提醒）与“生活用水提示”（建议性）。</span><span class="en">Distinguish “drinking high-risk” (stop now) from “household advisory”.</span></p>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">应用场景 · 核心流程</span><span class="en">Scenario flows</span></h2>
+        <p><span class="zh">围绕“监测—分析—预警—处理”闭环，双形态终端分别落地到两个核心场景：家庭用水与外出旅行。每个场景下，水质异常时触发“人机提醒 + 自动解决 + 健康建议”三路联动。</span><span class="en">The monitor–analyze–alert–resolve loop lands on two core scenarios — home and travel. On any anomaly, three tracks fire together: alert, auto-fix, and health advice.</span></p>
+
+        <h3><span class="zh">场景一 · 家庭用水</span><span class="en">Scenario 1 · Home</span></h3>
+        <div class="flow">
+          <div class="flow-node start"><span class="zh">家庭用水水质检测</span><span class="en">Home water test</span></div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node decision"><span class="zh">水质异常？</span><span class="en">Abnormal?</span></div>
+          <div class="flow-split">
+            <div class="flow-branch normal">
+              <div class="branch-label"><span class="zh">否 · 正常</span><span class="en">No · normal</span></div>
+              <div class="flow-node small"><span class="zh">持续监测，正常使用</span><span class="en">Keep monitoring</span></div>
+            </div>
+            <div class="flow-branch warn">
+              <div class="branch-label"><span class="zh">是 · 异常 → 三路联动处理</span><span class="en">Yes · abnormal → 3-track response</span></div>
+              <div class="flow-actions">
+                <div class="flow-action"><b><span class="zh">① 人机互动提醒</span><span class="en">① Alerts</span></b><span class="zh">设备亮灯 · APP 弹窗 · 语音提示</span><span class="en">Device light · app push · voice</span></div>
+                <div class="flow-action"><b><span class="zh">② 分级自动解决方案</span><span class="en">② Tiered auto-fix</span></b><span class="zh">轻度 → 自动基础过滤；中度 → 联动净水器；重度 → 强提醒关水</span><span class="en">Light → basic filter; medium → purifier; heavy → force shutoff</span></div>
+                <div class="flow-action"><b><span class="zh">③ 生活健康解决方案</span><span class="en">③ Health advice</span></b><span class="zh">余氯高 → 护肤建议；硬水高 → 护发建议；水质波动 → 饮水建议</span><span class="en">Chlorine → skin; hardness → hair; fluctuation → drinking</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node end"><span class="zh">家庭用水安全闭环</span><span class="en">Home water safety loop</span></div>
+        </div>
+
+        <h3><span class="zh">场景二 · 外出旅行 / 酒店</span><span class="en">Scenario 2 · Travel / Hotel</span></h3>
+        <div class="flow">
+          <div class="flow-node start"><span class="zh">外出旅行 / 酒店水质检测</span><span class="en">Travel / hotel water test</span></div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node decision"><span class="zh">水质异常？</span><span class="en">Abnormal?</span></div>
+          <div class="flow-split">
+            <div class="flow-branch normal">
+              <div class="branch-label"><span class="zh">否 · 正常</span><span class="en">No · normal</span></div>
+              <div class="flow-node small"><span class="zh">持续监测，正常使用</span><span class="en">Keep monitoring</span></div>
+            </div>
+            <div class="flow-branch warn">
+              <div class="branch-label"><span class="zh">是 · 异常 → 三路联动处理</span><span class="en">Yes · abnormal → 3-track response</span></div>
+              <div class="flow-actions">
+                <div class="flow-action"><b><span class="zh">① 人机互动提醒</span><span class="en">① Alerts</span></b><span class="zh">设备红灯闪烁，屏幕提示水质异常</span><span class="en">Red light + on-screen abnormal warning</span></div>
+                <div class="flow-action"><b><span class="zh">② 自动解决方案</span><span class="en">② Auto-fix</span></b><span class="zh">强制开启自身复合滤芯净化，净化后才允许出水；屏幕显示“已为您深度过滤”，APP 推送“已净化，可安全使用”</span><span class="en">Force internal filter before dispensing; screen “deep-filtered”, app push “safe to use”</span></div>
+                <div class="flow-action"><b><span class="zh">③ 旅行专属健康建议</span><span class="en">③ Travel advice</span></b><span class="zh">水中余氯明显、酒店水硬度较高，不建议直接洗脸 / 漱口；建议烧开后给婴幼儿冲泡奶粉；自动开启旅行净化模式</span><span class="en">High chlorine &amp; hardness — avoid washing / rinsing; boil before infant formula; auto travel-purify mode</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node end"><span class="zh">旅行用水安全闭环</span><span class="en">Travel water safety loop</span></div>
+        </div>
       </section>
 
       <section class="block">
@@ -132,7 +243,7 @@
 
   <footer class="site-footer">
     <div class="foot-inner">
-      <div class="foot-note"><span class="zh">交付物 ② · PRD。正文可「开启编辑」直接修改。</span><span class="en">Deliverable ② · PRD. Edit inline via “Edit”.</span></div>
+      <div class="foot-note"><span class="zh">交付物 ② · PRD。正文可“开启编辑”直接修改。</span><span class="en">Deliverable ② · PRD. Edit inline via “Edit”.</span></div>
       <div><a href="../index.html"><span class="zh">← 返回案例</span><span class="en">← Back to case</span></a></div>
     </div>
   </footer>

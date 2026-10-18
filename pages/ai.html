@@ -14,7 +14,7 @@
       <p class="eyebrow"><span class="zh">交付物 ⑦ · AI 协作叙事</span><span class="en">Deliverable ⑦ · AI Collaboration</span></p>
       <h1><span class="zh">一个产品人如何用 AI 把想法做成软件</span><span class="en">How a PM used AI to turn an idea into software</span></h1>
       <p class="sub">
-        <span class="zh">回答面试高频问题「你是怎么做的」。核心叙事：作为项目负责人 + 产品角色，借助 AI 工具把设想从 0 做到两套可运行的软著。<b>AI 是杠杆，产品判断和验收标准是我。</b></span>
+        <span class="zh">回答面试高频问题“你是怎么做的”。核心叙事：作为项目负责人 + 产品角色，借助 AI 工具把设想从 0 做到两套可运行的软著。<b>AI 是杠杆，产品判断和验收标准是我。</b></span>
         <span class="en">The answer to “how did you build this”. As lead + product role, I used AI tools to take an idea from 0 to two running copyrights. <b>AI is leverage; judgment and acceptance criteria are mine.</b></span>
       </p>
     </div>
@@ -28,13 +28,13 @@
         <table>
           <thead><tr><th style="width:22%"><span class="zh">环节</span><span class="en">Stage</span></th><th style="width:38%"><span class="zh">我做什么（产品判断）</span><span class="en">Me (judgment)</span></th><th><span class="zh">AI 辅助什么（执行杠杆）</span><span class="en">AI (execution)</span></th></tr></thead>
           <tbody>
-            <tr><td><span class="zh">需求定义</span><span class="en">Requirements</span></td><td><span class="zh">定闭环、定「健康解读」差异化</span><span class="en">Set loop + differentiation</span></td><td><span class="zh">辅助调研、整理竞品/文献</span><span class="en">Research, organize rivals/literature</span></td></tr>
-            <tr><td><span class="zh">架构设计</span><span class="en">Architecture</span></td><td><span class="zh">定「数据源抽象」「前后端引擎同步」等决策</span><span class="en">Key architecture decisions</span></td><td><span class="zh">代码骨架、方案对比</span><span class="en">Scaffold, compare options</span></td></tr>
-            <tr><td><span class="zh">交付落地</span><span class="en">Delivery</span></td><td><span class="zh">拆任务、写验收标准、判「已实现 vs 规划中」</span><span class="en">Break down, acceptance criteria</span></td><td><span class="zh">实现 11 视图、REST/MQTT、测试</span><span class="en">Build views, REST/MQTT, tests</span></td></tr>
+            <tr><td><span class="zh">需求定义</span><span class="en">Requirements</span></td><td><span class="zh">定闭环、定“健康解读”差异化</span><span class="en">Set loop + differentiation</span></td><td><span class="zh">辅助调研、整理竞品/文献</span><span class="en">Research, organize rivals/literature</span></td></tr>
+            <tr><td><span class="zh">架构设计</span><span class="en">Architecture</span></td><td><span class="zh">定“数据源抽象”“前后端引擎同步”等决策</span><span class="en">Key architecture decisions</span></td><td><span class="zh">代码骨架、方案对比</span><span class="en">Scaffold, compare options</span></td></tr>
+            <tr><td><span class="zh">交付落地</span><span class="en">Delivery</span></td><td><span class="zh">拆任务、写验收标准、判“已实现 vs 规划中”</span><span class="en">Break down, acceptance criteria</span></td><td><span class="zh">实现 11 视图、REST/MQTT、测试</span><span class="en">Build views, REST/MQTT, tests</span></td></tr>
             <tr><td><span class="zh">质量验收</span><span class="en">QA</span></td><td><span class="zh">定 24 项冒烟测试标准、核对前后端一致</span><span class="en">Test standards, consistency</span></td><td><span class="zh">生成测试、跑测试、定位失败</span><span class="en">Generate &amp; run tests</span></td></tr>
           </tbody>
         </table>
-        <blockquote><span class="zh">一句话：我负责「做什么、为什么、对不对」，AI 负责「快速做出来」。</span><span class="en">In one line: I own “what, why, correct”; AI owns “build it fast”.</span></blockquote>
+        <blockquote><span class="zh">一句话：我负责“做什么、为什么、对不对”，AI 负责“快速做出来”。</span><span class="en">In one line: I own “what, why, correct”; AI owns “build it fast”.</span></blockquote>
       </section>
 
       <section class="block">
@@ -46,43 +46,43 @@
             <p><span class="zh">问题：硬件是最大不确定性，若软件依赖硬件才能跑，交付会被卡死。决策：定义 <code>DataSource</code> 接口，AI 并行实现 Mock/HTTP/MQTT 三套，<code>config.js</code> 一键切换。结果：硬件没落地，软件就能完整演示迭代、软著可独立登记。</span><span class="en">Problem: hardware is the biggest unknown; coupling SW to it blocks delivery. Decision: a <code>DataSource</code> interface, AI implementing Mock/HTTP/MQTT in parallel. Result: SW demos and iterates before hardware; copyright registered independently.</span></p>
           </div>
           <div class="card">
-            <h4><span class="zh">案例 2 · 前后端「同一领域模型」同步维护</span><span class="en">Case 2 · one domain model, two places</span></h4>
-            <p><span class="zh">问题：三档阈值与「水质-健康」引擎前后端各实现一次，改一处漏一处就出 bug。决策：阈值收敛到两份 <code>config.js</code> 的 <code>METRICS</code>，写进项目规范让 AI 每次修改都同时改两份。结果：前后端一致，冒烟测试跨层验证。</span><span class="en">Problem: threshold logic duplicated front &amp; back. Decision: converge to <code>METRICS</code> in two <code>config.js</code>, and codify “edit both together” into project conventions the AI follows. Result: consistency, cross-layer tests.</span></p>
+            <h4><span class="zh">案例 2 · 前后端“同一领域模型”同步维护</span><span class="en">Case 2 · one domain model, two places</span></h4>
+            <p><span class="zh">问题：三档阈值与“水质-健康”引擎前后端各实现一次，改一处漏一处就出 bug。决策：阈值收敛到两份 <code>config.js</code> 的 <code>METRICS</code>，写进项目规范让 AI 每次修改都同时改两份。结果：前后端一致，冒烟测试跨层验证。</span><span class="en">Problem: threshold logic duplicated front &amp; back. Decision: converge to <code>METRICS</code> in two <code>config.js</code>, and codify “edit both together” into project conventions the AI follows. Result: consistency, cross-layer tests.</span></p>
           </div>
           <div class="card">
-            <h4><span class="zh">案例 3 · 冒烟测试作为「AI 的验收标准」</span><span class="en">Case 3 · smoke tests as acceptance criteria</span></h4>
-            <p><span class="zh">问题：AI 生成代码快，但「看起来能跑」≠「逻辑正确」（阈值边界、MQTT 编解码、健康规则映射最易错）。决策：为核心逻辑定义可自动运行的冒烟测试作为「完成」的硬标准。结果：前端 24 通过 0 失败、后端通过，作为每次改动的回归门槛。</span><span class="en">Problem: AI code is fast but “looks runnable” ≠ correct (threshold edges, MQTT encode/decode, rule mapping). Decision: automated smoke tests as the hard bar for “done”. Result: 24 pass / 0 fail frontend, backend pass — a regression gate.</span></p>
+            <h4><span class="zh">案例 3 · 冒烟测试作为“AI 的验收标准”</span><span class="en">Case 3 · smoke tests as acceptance criteria</span></h4>
+            <p><span class="zh">问题：AI 生成代码快，但“看起来能跑”≠“逻辑正确”（阈值边界、MQTT 编解码、健康规则映射最易错）。决策：为核心逻辑定义可自动运行的冒烟测试作为“完成”的硬标准。结果：前端 24 通过 0 失败、后端通过，作为每次改动的回归门槛。</span><span class="en">Problem: AI code is fast but “looks runnable” ≠ correct (threshold edges, MQTT encode/decode, rule mapping). Decision: automated smoke tests as the hard bar for “done”. Result: 24 pass / 0 fail frontend, backend pass — a regression gate.</span></p>
           </div>
         </div>
       </section>
 
       <section class="block">
-        <h2><span class="zh">我学到的「AI 协作方法论」</span><span class="en">My AI-collaboration method</span></h2>
+        <h2><span class="zh">我学到的“AI 协作方法论”</span><span class="en">My AI-collaboration method</span></h2>
         <ol>
           <li><span class="zh">先给约束，再让 AI 发挥：明确架构边界、一致性规则，产出才可控。</span><span class="en">Constraints first: clear boundaries &amp; consistency rules make AI output controllable.</span></li>
-          <li><span class="zh">验收标准前置：用可自动运行的测试定义「完成」，而不是看代码「像不像」。</span><span class="en">Acceptance criteria up front: tests define “done”, not vibes.</span></li>
-          <li><span class="zh">诚实区分「已实现」和「规划中」：AI 易把纸面承诺（如「机器学习」「ppb 精度」）当成已做成果，必须由产品人逐条核对——这是我踩过并纠正的坑。</span><span class="en">Honestly split “shipped” vs “planned”: AI tends to present paper promises (e.g. “ML”, “ppb precision”) as done; the PM must verify each — a mistake I caught and fixed.</span></li>
-          <li><span class="zh">图表/文档不能照搬：AI 首版只是起点，要有「重画成统一风格」的第二步。</span><span class="en">Never ship AI's first-pass visuals: redraw to a unified style as a second step.</span></li>
+          <li><span class="zh">验收标准前置：用可自动运行的测试定义“完成”，而不是看代码“像不像”。</span><span class="en">Acceptance criteria up front: tests define “done”, not vibes.</span></li>
+          <li><span class="zh">诚实区分“已实现”和“规划中”：AI 易把纸面承诺（如“机器学习”“ppb 精度”）当成已做成果，必须由产品人逐条核对——这是我踩过并纠正的坑。</span><span class="en">Honestly split “shipped” vs “planned”: AI tends to present paper promises (e.g. “ML”, “ppb precision”) as done; the PM must verify each — a mistake I caught and fixed.</span></li>
+          <li><span class="zh">图表/文档不能照搬：AI 首版只是起点，要有“重画成统一风格”的第二步。</span><span class="en">Never ship AI's first-pass visuals: redraw to a unified style as a second step.</span></li>
           <li><span class="zh">AI 有边界：纯文本模型读不了图、会幻觉、上下文有限——知道边界才知道何时换工具。</span><span class="en">Know AI's limits (can't read images, hallucinates) to know when to switch tools.</span></li>
         </ol>
       </section>
 
       <section class="block">
-        <h2><span class="zh">为什么这对我应聘「AI 应用产品」是加分项</span><span class="en">Why this fits “AI application product” roles</span></h2>
+        <h2><span class="zh">为什么这对我应聘“AI 应用产品”是加分项</span><span class="en">Why this fits “AI application product” roles</span></h2>
         <table>
           <thead><tr><th style="width:38%"><span class="zh">岗位诉求</span><span class="en">Role need</span></th><th><span class="zh">我的对应证据</span><span class="en">My evidence</span></th></tr></thead>
           <tbody>
-            <tr><td><span class="zh">理解 AI 能/不能做什么</span><span class="en">Know AI's limits</span></td><td><span class="zh">踩过「不能读图」「照搬纸面承诺」的边界，形成工具选择策略</span><span class="en">Formed explicit tool-selection strategy from real limits</span></td></tr>
+            <tr><td><span class="zh">理解 AI 能/不能做什么</span><span class="en">Know AI's limits</span></td><td><span class="zh">踩过“不能读图”“照搬纸面承诺”的边界，形成工具选择策略</span><span class="en">Formed explicit tool-selection strategy from real limits</span></td></tr>
             <tr><td><span class="zh">能拆需求、驱动 AI 交付</span><span class="en">Drive AI delivery</span></td><td><span class="zh">11 视图、双引擎、前后端、测试全部拆成 AI 可执行任务</span><span class="en">Broke 11 views, engines, tests into AI-executable tasks</span></td></tr>
-            <tr><td><span class="zh">有质量与验收意识</span><span class="en">QA mindset</span></td><td><span class="zh">用冒烟测试定义「完成」，不迷信「看起来能跑」</span><span class="en">Tests define done; no “looks runnable” faith</span></td></tr>
-            <tr><td><span class="zh">能把 AI 能力产品化</span><span class="en">Productize AI</span></td><td><span class="zh">已规划「规则引擎 → LLM+RAG 健康咨询」演进</span><span class="en">Planned rules → LLM+RAG evolution</span></td></tr>
+            <tr><td><span class="zh">有质量与验收意识</span><span class="en">QA mindset</span></td><td><span class="zh">用冒烟测试定义“完成”，不迷信“看起来能跑”</span><span class="en">Tests define done; no “looks runnable” faith</span></td></tr>
+            <tr><td><span class="zh">能把 AI 能力产品化</span><span class="en">Productize AI</span></td><td><span class="zh">已规划“规则引擎 → LLM+RAG 健康咨询”演进</span><span class="en">Planned rules → LLM+RAG evolution</span></td></tr>
           </tbody>
         </table>
       </section>
 
       <section class="block">
         <h2><span class="zh">边界声明（诚实）</span><span class="en">Honesty note</span></h2>
-        <p><span class="zh">本项目的产品决策、架构设计、验收标准由我（作为负责人）主导，AI 是执行杠杆，不夸大「AI 全自动完成」。软件为大创项目成果，著作权归属河海大学，AI 工具为协作方式，不影响知识产权归属与诚实性。</span><span class="en">Product decisions, architecture, and acceptance criteria were led by me as project lead; AI was an execution lever — no overclaiming of “fully automated”. The software is a college-project deliverable; copyright belongs to Hohai University; AI was a collaboration method, not a change to ownership or honesty.</span></p>
+        <p><span class="zh">本项目的产品决策、架构设计、验收标准由我（作为负责人）主导，AI 是执行杠杆，不夸大“AI 全自动完成”。软件为大创项目成果，著作权归属河海大学，AI 工具为协作方式，不影响知识产权归属与诚实性。</span><span class="en">Product decisions, architecture, and acceptance criteria were led by me as project lead; AI was an execution lever — no overclaiming of “fully automated”. The software is a college-project deliverable; copyright belongs to Hohai University; AI was a collaboration method, not a change to ownership or honesty.</span></p>
       </section>
 
     </div>
@@ -90,7 +90,7 @@
 
   <footer class="site-footer">
     <div class="foot-inner">
-      <div class="foot-note"><span class="zh">交付物 ⑦ · AI 协作叙事。特别面向强调「AI 应用」的岗位。</span><span class="en">Deliverable ⑦ · AI collaboration. Tailored for AI-application roles.</span></div>
+      <div class="foot-note"><span class="zh">交付物 ⑦ · AI 协作叙事。特别面向强调“AI 应用”的岗位。</span><span class="en">Deliverable ⑦ · AI collaboration. Tailored for AI-application roles.</span></div>
       <div><a href="../index.html"><span class="zh">← 返回案例</span><span class="en">← Back to case</span></a></div>
     </div>
   </footer>

@@ -79,7 +79,7 @@
     // 编辑态提示条
     var hint = document.createElement('div');
     hint.className = 'edit-hint';
-    hint.innerHTML = '<span class="zh">编辑模式：改完可「导出 HTML」替换本地文件，或「保存草稿」下次续改。</span>' +
+    hint.innerHTML = '<span class="zh">编辑模式：改完可“导出 HTML”替换本地文件，或“保存草稿”下次续改。</span>' +
                      '<span class="en">Edit mode: use &quot;Export&quot; to save the page, or &quot;Save draft&quot; to continue later.</span> ' +
                      '<button class="btn btn-solid" data-act="export"><span class="zh">导出 HTML</span><span class="en">Export</span></button> ' +
                      '<button class="btn" data-act="draft"><span class="zh">保存草稿</span><span class="en">Save draft</span></button> ' +
@@ -104,11 +104,16 @@
   /* ---------- 导出 HTML ---------- */
   function exportHTML() {
     var clone = document.documentElement.cloneNode(true);
+
+    // 移除运行时注入的导航/编辑提示，避免导出后重复出现
+    clone.querySelectorAll('.site-nav, .edit-hint').forEach(function (el) { el.remove(); });
+
     clone.querySelectorAll('[contenteditable]').forEach(function (el) {
       el.removeAttribute('contenteditable');
     });
     var body = clone.querySelector('body');
     if (body) body.classList.remove('editing');
+
     var html = '<!DOCTYPE html>\n' + clone.outerHTML;
     var name = location.pathname.split('/').pop() || 'index.html';
     var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
@@ -119,7 +124,8 @@
     document.body.appendChild(a);
     a.click();
     a.remove();
-    URL.revokeObjectURL(url);
+    // 延迟释放，避免部分浏览器下载被中断
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
   }
 
   /* ---------- 草稿（localStorage） ---------- */
